@@ -1,5 +1,5 @@
 ---
-title: "Find Sql Injection in Python Code"
+title: "Find SQL injection in Python code"
 date: 2017-12-11T10:08:06+08:00
 Categories:
   - coding
