@@ -1,0 +1,356 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ryan&#39;s blog</title>
+    <link>https://prpr.tw/</link>
+    <description>Recent content on Ryan&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Mon, 21 Dec 2020 21:33:04 +0800</lastBuildDate>
+    
+        <atom:link href="https://prpr.tw/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Terminal Notify</title>
+        <link>https://prpr.tw/posts/terminal-notify/</link>
+        <pubDate>Tue, 26 Dec 2017 09:57:45 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/terminal-notify/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/terminal-notify/ -&lt;p&gt;最近公司 build tool 因為專案爆肥越來越慢，build code 要花個十分鐘左右，不太行啊， ~泡咖啡時間變長了呀逼~&lt;/p&gt;
+&lt;p&gt;不過暫時沒有時間去優化他，同事提出一個&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;build-code &amp;amp;&amp;amp; printf &#39;\a&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;build 完扣給你逼一下&lt;/p&gt;
+&lt;p&gt;這招透過 SSH 連進去當然不會逼，如果用 iTerm2 就是意思意思閃一下並亮個紅燈給你看&lt;/p&gt;
+&lt;p&gt;但是好像還是要喵一下 session tab or Dock icon，似乎不是很方便啊&lt;/p&gt;
+&lt;p&gt;這時候另一個同事又提出用 &lt;a href=&#34;https://devel.freebsoft.org/speechd&#34;&gt;speech-dispatcher&lt;/a&gt; 跟 &lt;a href=&#34;https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/say.1.html&#34;&gt;say&lt;/a&gt; 講話給你聽&lt;/p&gt;
+&lt;p&gt;欸，這想法蒸蚌！&lt;/p&gt;
+&lt;p&gt;不過這玩意 via SSH 不 work 啊！覺得聲音通知是 developer 的未來的我在 Google 努力找尋其他方法。&lt;/p&gt;
+&lt;p&gt;後來想到 iterm2 好像有功能可以抓 output 來觸發事件，組了一下確實會動，抓 build tool 最後的 Success 文字&lt;/p&gt;
+&lt;p&gt;config 像這樣，build 完之後就會聲音通知你了哦，就像請了一位秘書呢 ^.&amp;lt;
+&lt;img src=&#34;https://i.imgur.com/TGaTOFA.png&#34; alt=&#34;Imgur&#34;&gt;&lt;/p&gt;
+&lt;p&gt;列出支援的聲音檔，廣東話豪可愛ㄛ&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; say -v &#39;?&#39;
+Mei-Jia             zh_TW    # 您好，我叫美佳。我說國語。
+Sin-ji              zh_HK    # 您好，我叫 Sin-ji。我講廣東話。
+Ting-Ting           zh_CN    # 您好，我叫Ting-Ting。我讲中文普通话。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ref:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.iterm2.com/documentation-triggers.html&#34;&gt;iTerm2 triggers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/julienXX/terminal-notifier&#34;&gt;macOS push notification&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;- https://prpr.tw/posts/terminal-notify/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Find SQL injection in Python code</title>
+        <link>https://prpr.tw/posts/find-sql-injection-in-python-code/</link>
+        <pubDate>Mon, 11 Dec 2017 10:08:06 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/find-sql-injection-in-python-code/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/find-sql-injection-in-python-code/ -&lt;p&gt;&lt;a href=&#34;https://github.com/uber/py-find-injection&#34;&gt;https://github.com/uber/py-find-injection&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用程式化的方式掃出 code base 沒有乖乖用 paramstyle sql 語句&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/P18DyHR.jpg&#34; alt=&#34;Imgur&#34;&gt;&lt;/p&gt;
+&lt;p&gt;鴿子封包，uber 在 2013 年丟出來的玩具&lt;/p&gt;
+&lt;p&gt;原理利用 AST 拆 code 找出特定的 function name，並比對第一個參數有沒有用過字串串接&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/uber/py-find-injection/blob/f91c137e8b78424bec78085df771b1a6f62c6769/py_find_injection/__init__.py#L80&#34;&gt;default 會找 session.execute cursor.execute&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;簡單但有效，clone 下來改也很快。&lt;/p&gt;
+&lt;p&gt;其中找&lt;a href=&#34;https://github.com/uber/py-find-injection/blob/master/py_find_injection/__init__.py#L62&#34;&gt;字串串接的 code&lt;/a&gt;也滿有趣的，值得一讀&lt;/p&gt;
+&lt;p&gt;但是歹記通常不是憨人想得這麼簡單，code base 裡面總有為了省事，及不好處理的 list parameter，
+而自己串 sql。有年紀的 codebase 掃下去大概只有淚與累，大概只能用在自己開發或是放在 CI 上逼死同事。&lt;/p&gt;- https://prpr.tw/posts/find-sql-injection-in-python-code/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>MySQL Tuple Comparison Issue</title>
+        <link>https://prpr.tw/posts/mysql-tuple-comparison-issue/</link>
+        <pubDate>Sat, 09 Dec 2017 13:19:56 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/mysql-tuple-comparison-issue/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/mysql-tuple-comparison-issue/ -&lt;p&gt;MySQL 5.6 tuple comparison bug&lt;/p&gt;
+&lt;p&gt;這是一個用 IN clause 比較 primary key 卻得到 full table scan 的故事&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/LIOTPaT.jpg&#34; alt=&#34;Imgur&#34;&gt;&lt;/p&gt;
+&lt;p&gt;tl; dr&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;升級 mysql &amp;gt;= 5.7, 改用 and, or 形式串接條件
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Tuple Comparison Example&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;select * from users where (first_name, last_name) in (
+    (&#39;John&#39;, &#39;Doe&#39;),
+    (&#39;Haragaki&#39;, &#39;Yui&#39;),
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;一開始直覺寫出 IN 的版本（因為 IN 好棒棒會用 &lt;a href=&#34;https://dev.mysql.com/doc/refman/5.7/en/comparison-operators.html#function_in&#34;&gt;binary search&lt;/a&gt;），結果 explain check 一看居然是 full table scan，昏倒。
+想一下用 and + or 串接改看看&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;select * from users where
+    (first_name=&#39;John&#39; and last_name=&#39;Doe&#39;) or
+    (first_name=&#39;Haragaki&#39; and last_name=&#39;Yui&#39;)
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;哎唷不錯喔有吃到 index，就這樣先把 fix 丟上線。&lt;/p&gt;
+&lt;p&gt;過陣子比較閒來挖一下問題出在哪&lt;/p&gt;
+&lt;p&gt;翻到 &lt;a href=&#34;https://stackoverflow.com/questions/16117492/different-approach-of-using-in-clause-in-mysql&#34;&gt;stackoverflow&lt;/a&gt; 上的相關討論，列舉出 IN clause 的幾種使用方式，正是他說的第三種 tuple comparison
+後面評論也給出 Percona &lt;a href=&#34;https://www.percona.com/blog/2008/04/04/multi-column-in-clause-unexpected-mysql-issue/&#34;&gt;一篇文章&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;指出是個 bug，而且這邊還是 2008 年的文章，一個好的 bug 果然是歷久彌新&lt;/p&gt;
+&lt;p&gt;懶得架環境，用&lt;a href=&#34;https://www.db-fiddle.com/f/xpwiDid8dxHFVvKfD2sgxW/0&#34;&gt;線上環境&lt;/a&gt;測一下，
+看其他版本有沒有這問題。&lt;/p&gt;
+&lt;p&gt;看起來在 MySQL 5.7 解決了，不巧公司用的是 5.6 只好先繼續用 workaround 耶嘿嘿&lt;/p&gt;
+&lt;p&gt;Ref:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/16117492/different-approach-of-using-in-clause-in-mysql&#34;&gt;https://stackoverflow.com/questions/16117492/different-approach-of-using-in-clause-in-mysql&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.percona.com/blog/2008/04/04/multi-column-in-clause-unexpected-mysql-issue/&#34;&gt;https://www.percona.com/blog/2008/04/04/multi-column-in-clause-unexpected-mysql-issue/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.db-fiddle.com/f/xpwiDid8dxHFVvKfD2sgxW/0&#34;&gt;https://www.db-fiddle.com/f/xpwiDid8dxHFVvKfD2sgxW/0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;- https://prpr.tw/posts/mysql-tuple-comparison-issue/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>unifi - airCube</title>
+        <link>https://prpr.tw/posts/aircube/</link>
+        <pubDate>Sat, 14 Oct 2017 14:06:48 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/aircube/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/aircube/ -&lt;p&gt;&lt;img src=&#34;https://imgur.com/3AjUuen.jpg&#34; alt=&#34;Imgur&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;又&#34;&gt;又&lt;/h1&gt;
+&lt;p&gt;買了台 AP（咦，為什麼我要說又），特色是方塊就古錐，4 port 可作 NAT/switch
+DC/POE 供電也可以 passthrough 出去&lt;/p&gt;
+&lt;h1 id=&#34;spec&#34;&gt;Spec&lt;/h1&gt;
+&lt;p&gt;Model: airCube-AC&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(4) Gigabit Ethernet Ports&lt;/li&gt;
+&lt;li&gt;24V PoE Passthrough for airMAX CPE&lt;/li&gt;
+&lt;li&gt;Dual-Band, 802.11ac, 2x2 MIMO Technology&lt;/li&gt;
+&lt;li&gt;Up to 300 Mbps in the 2.4 GHz Radio Band&lt;/li&gt;
+&lt;li&gt;Up to 866.7 Mbps in the 5 GHz Radio Band&lt;/li&gt;
+&lt;li&gt;Powered by 24V Passive PoE or Included Power Adapter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以看到大概就是華碩 AC1200 等級的機器，現在就在 &lt;a href=&#34;https://store.ubnt.com/collections/beta&#34;&gt;ubnt beta store&lt;/a&gt; 上面賣，一台只要 50 鎂，沒有 AC 只要 25 鎂&lt;/p&gt;
+&lt;h1 id=&#34;不過&#34;&gt;不過&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;只運美國&lt;/li&gt;
+&lt;li&gt;beta 要先註冊&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;ubnt&#34;&gt;ubnt&lt;/h1&gt;
+&lt;p&gt;是家美國公司，據傳 RD 們都在台灣，不過他們家產品台灣還是不好買&lt;/p&gt;
+&lt;p&gt;以前買過他們設備印象挺好，這次這麼古錐，再買一台來玩玩&lt;/p&gt;
+&lt;h1 id=&#34;目前&#34;&gt;目前&lt;/h1&gt;
+&lt;p&gt;這台只能透過 App 設定，設定過程挺簡單，點一點按一按就搞定惹&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;插網路線/過電&lt;/li&gt;
+&lt;li&gt;裝 &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.ubnt.umobile&amp;amp;hl=en&#34;&gt;App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;進同一個 lan 按掃描&lt;/li&gt;
+&lt;li&gt;掃 QR Code 即完成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;App 操作畫面給泥們參考看看&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/UnL1ZIH.jpg&#34; alt=&#34;Imgur&#34;&gt;
+&lt;img src=&#34;https://imgur.com/MR73Z5r.jpg&#34; alt=&#34;Imgur&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;pros&#34;&gt;Pros&lt;/h1&gt;
+&lt;p&gt;App 操作性不錯，好上手，介面清楚&lt;/p&gt;
+&lt;p&gt;外形小巧，無天線放桌上不會顯得突兀，如果搭配 POE 可以多一個插座，&lt;/p&gt;
+&lt;h1 id=&#34;cons&#34;&gt;Cons&lt;/h1&gt;
+&lt;p&gt;又是 passive POE，雖然低階產品不意外，但能不能支援個 802.3at&lt;/p&gt;
+&lt;p&gt;天線內藏，目前丟在辦公室測試，訊號強度被 Asus 5300 屌打，能吸到的機器大概就麻將桌大小吧&lt;/p&gt;- https://prpr.tw/posts/aircube/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>分分鐘看懂 ABNF 以 language tag 為例</title>
+        <link>https://prpr.tw/posts/rfc-5234/</link>
+        <pubDate>Mon, 02 Oct 2017 18:54:14 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/rfc-5234/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/rfc-5234/ -&lt;p&gt;Code review 的時候熊熊想戰 naming，戰 naming 最好的就是翻相關的 rfc spec&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;這樣對同事提出建設性批評就會特有底氣&lt;/del&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;總之這次要戰 language tag，什麼是 langugage tag 呢？&lt;/p&gt;
+&lt;p&gt;像是 &lt;code&gt;zh_TW&lt;/code&gt;, &lt;code&gt;zh_Hant&lt;/code&gt;, &lt;code&gt;en_US&lt;/code&gt; 這種都可以說是 language tag，其中會用底線 &lt;code&gt;_&lt;/code&gt; 來區分每一段，&lt;/p&gt;
+&lt;p&gt;好想知道一段一段切開來要怎麼稱呼人家&lt;/p&gt;
+&lt;p&gt;相關的 rfc 甚至已經有老中青三代，我卻一個女朋友都沒有
+&lt;a href=&#34;https://tools.ietf.org/html/rfc1766&#34;&gt;rfc-1766&lt;/a&gt;
+&lt;a href=&#34;https://tools.ietf.org/html/rfc3066&#34;&gt;rfc-3066&lt;/a&gt;
+&lt;a href=&#34;https://tools.ietf.org/html/rfc4646&#34;&gt;rfc-4646&lt;/a&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;（回到正題），對 language tag 定義中 &lt;code&gt;2*3ALPHA&lt;/code&gt; 百思不得其解，一直想要二乘三得六阿法。
+看不懂實在很苦惱，這樣還跟人家戰什麼，只好先去看看 rfc 愛用的 ABNF Expression&lt;/p&gt;
+&lt;p&gt;以前看到這個 ABNF Expression 吼，每次喵過去感覺略懂略懂，日子也就這樣過了&lt;/p&gt;
+&lt;p&gt;這次終於是避不掉了，所幸看完之後發現還算實用，以後女朋友問你喜歡她哪一點就用 BNF 定義一下
+她一定會對你的意見用白眼與沈默表示高度的心悅誠服 (?
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;投資前請詳閱公開 &lt;a href=&#34;https://tools.ietf.org/html/rfc5234&#34;&gt;spec&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;啊什麼是 ABNF？
+Augmented-BNF &amp;ldquo;增強&amp;rdquo; 的 BNF&lt;/p&gt;
+&lt;p&gt;啊什麼是 BNF？
+Backus Normal Form&lt;/p&gt;
+&lt;p&gt;可以說是描述語言的語言。就文法啦，BNF 利用符號來定義文法，掌握文法就可以說出他的語言
+ABNF 擴展了 BNF 新增了若干規則，個人感覺類似於 syntax sugar 拉&lt;/p&gt;
+&lt;h1 id=&#34;abnf&#34;&gt;ABNF&lt;/h1&gt;
+&lt;p&gt;節錄部分 rfc-4646 如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;   &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;langtag&lt;/span&gt;       &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;(language&lt;/span&gt;
+                    [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;script&lt;/span&gt;]
+                    [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;region&lt;/span&gt;]
+                    &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;*(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;variant)&lt;/span&gt;
+                    &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;*(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;extension)&lt;/span&gt;
+                    [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;privateuse&lt;/span&gt;]&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;)&lt;/span&gt;
+
+   &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;language&lt;/span&gt;      &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;ALPHA&lt;/span&gt; [ &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;extlang&lt;/span&gt; ]&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;shortest&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;ISO&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;639&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;code&lt;/span&gt;
+
+   &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;script&lt;/span&gt;        &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;ALPHA&lt;/span&gt;                 &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;ISO&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;15924&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;code&lt;/span&gt;
+
+   &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;region&lt;/span&gt;        &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;ALPHA&lt;/span&gt;                 &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;ISO&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3166&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;code&lt;/span&gt;
+
+   &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;variant&lt;/span&gt;       &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;alphanum&lt;/span&gt;            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;registered&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;variants&lt;/span&gt;
+                 &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;(DIGIT&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;alphanum)&lt;/span&gt;
+
+   &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;alphanum&lt;/span&gt;      &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;(ALPHA&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;DIGIT)&lt;/span&gt;       &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;letters&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;numbers&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Rule 就是一條一條的定義拉，比較特別的是 rule naming 不區分大小寫，
+也就是 &lt;code&gt;&amp;lt;rulename&amp;gt;, &amp;lt;Rulename&amp;gt;, &amp;lt;RULENAME&amp;gt;, and &amp;lt;rUlENamE&amp;gt;&lt;/code&gt; 都是一樣的東西&lt;/p&gt;
+&lt;p&gt;langtag 就會由後面這些 rule 所組成，遞迴我喜翻你啊！&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;串接使用空白
+譬如說台灣身分證字號就是 &lt;code&gt;1ALPHA 9DIGIT&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;註解 &lt;code&gt;;&lt;/code&gt;
+像是 &lt;code&gt;region = 2ALPHA ; e.g. TW&lt;/code&gt;
+大家有聽過 semicolon 笑話嗎？看過之後每次看到 semicolon 都無法直視呢&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;選用 &lt;code&gt;[]&lt;/code&gt;
+跟 unix command manual 有點像，該不會也用 ABNF 吧？
+像是 &lt;code&gt;ls [OPTION]... [FILE]...&lt;/code&gt; 這個大家很熟拉&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Repetition 重複拉，我覺得英文比較傳神
+language 本身定義是 &lt;code&gt;2*3ALPHA&lt;/code&gt;，&lt;code&gt;*&lt;/code&gt; 代表 repetition, 2*3
+其實就是 2~3 的意思啦，很反人類&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;兩碼及三碼代表 &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes&#34;&gt;ISO 639-1&lt;/a&gt;, ISO 639-2
+就是 &lt;code&gt;zh&lt;/code&gt;, &lt;code&gt;ja&lt;/code&gt;, &lt;code&gt;en&lt;/code&gt; 等等&lt;/p&gt;
+&lt;p&gt;script 定義是 &lt;code&gt;4ALPHA&lt;/code&gt;，代表固定四碼後面又註解 &lt;a href=&#34;https://en.wikipedia.org/wiki/ISO_15924&#34;&gt;ISO 15924&lt;/a&gt;
+這邊應該是代表不同的書寫系統，像是 &lt;code&gt;Hant&lt;/code&gt;, &lt;code&gt;Hans&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;region &lt;code&gt;2ALPHA&lt;/code&gt; 就是 &lt;code&gt;HK&lt;/code&gt;, &lt;code&gt;TW&lt;/code&gt; 等等，你知我知獨眼龍也知&lt;/p&gt;
+&lt;p&gt;這樣組合起來就是 &lt;code&gt;zh_Hant_TW&lt;/code&gt; 順帶一提 variant 是方言，舉例來說客家話會長這樣 &lt;code&gt;zh_hakka&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;alternatives--rule1--rule2&#34;&gt;Alternatives:  Rule1 / Rule2&lt;/h3&gt;
+&lt;p&gt;可以看到 alphanum 用這條規則簡單定義出來
+e.g. &lt;code&gt;ALPHA / DIGIT&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sequence-group--rule1-rule2&#34;&gt;Sequence Group:  (Rule1 Rule2)&lt;/h3&gt;
+&lt;p&gt;參考 alphanum 如果沒有用 &lt;code&gt;()&lt;/code&gt; 括起來
+前後文對照會有問題&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Elements enclosed in parentheses are treated as a single element,
+   whose contents are strictly ordered.  Thus,
+
+         elem (foo / bar) blat
+
+   matches (elem foo blat) or (elem bar blat), and
+
+         elem foo / bar blat
+
+   matches (elem foo) or (bar blat).
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;還有一些遺珠的的 ABNF 像是&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Value Range Alternatives
+精確定義是由哪些字母或數字所組成&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Incremental Alternatives
+方便定義一長串的 alternatives&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;references&#34;&gt;References:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://matt.might.net/articles/grammars-bnf-ebnf/&#34;&gt;http://matt.might.net/articles/grammars-bnf-ebnf/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;- https://prpr.tw/posts/rfc-5234/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Pip 藏有惡意套件</title>
+        <link>https://prpr.tw/posts/pip-malicious-packages/</link>
+        <pubDate>Mon, 25 Sep 2017 08:20:05 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/pip-malicious-packages/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/pip-malicious-packages/ -&lt;p&gt;有一段時間了 20170909 的報告
+&lt;a href=&#34;http://www.nbu.gov.sk/skcsirt-sa-20170909-pypi/&#34;&gt;http://www.nbu.gov.sk/skcsirt-sa-20170909-pypi/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;某組織發出的研究報告，指出 pip 裡面有若干 package 用很像的名字進行偽裝&lt;/p&gt;
+&lt;p&gt;譬如說 &lt;code&gt;crypto&lt;/code&gt; -&amp;gt; &lt;code&gt;crypt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;偽裝的 package 會在 setup.py 裡面加料，system admin 只要 pip install 就會直接中招&lt;/p&gt;
+&lt;p&gt;可以用這個檢查，檢查如果有直接移除重裝即可&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pip list --format&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;legacy | egrep &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;^(acqusition|apidev-coop|bzip|crypt|django-server|pwd|setup-tools|telnet|urlib3|urllib) &amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/44351366/python-3-unable-to-install-crypt-module-successfully&#34;&gt;stackoverflow&lt;/a&gt; 也有撿到以前的受害者 lol&lt;/p&gt;
+&lt;p&gt;值得一提的是，惡意程式碼只會把一些系統資訊傳回在中國的 ip，並加上了這段註解，略佛？&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Welcome Here! :)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# just toy, no harm :)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://prpr.tw/posts/pip-malicious-packages/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>根據標籤下載 gmail 備份</title>
+        <link>https://prpr.tw/posts/google-takeout/</link>
+        <pubDate>Sun, 24 Sep 2017 20:08:08 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/google-takeout/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/google-takeout/ -&lt;p&gt;最近剛好有一些處理 email 資料的需求，要從一堆 exception mail 裡面撈出一些 id。&lt;/p&gt;
+&lt;p&gt;之前數量不多都馬手動複製&lt;/p&gt;
+&lt;p&gt;但這次有幾十個 conversations 看了就很懶，我內心特爛軟&lt;/p&gt;
+&lt;p&gt;來問問看 Google 老師看有沒有聰明方法可以搞定這件事&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;\&lt;a href=&#34;https://takeout.google.com/settings/takeout&#34;&gt;Google takeout&lt;/a&gt;/ 小叮噹語氣&lt;/p&gt;
+&lt;p&gt;本質上是 Google service 眾的備份工具，在備份 gmail 部分裡面，可以只下載特定 email label&lt;/p&gt;
+&lt;p&gt;還有一個問題是下載格式會是 mbox format，必須再做處理&lt;/p&gt;
+&lt;p&gt;流程會是這樣子的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;把要 exported 的 email conversations 加一個新 label e.g. &lt;code&gt;exported&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;去 Google takeout 請求該 label 的 backup&lt;/li&gt;
+&lt;li&gt;Parse mbox file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/ktWAnpW.png&#34; alt=&#34;Imgur&#34;&gt;&lt;/p&gt;
+&lt;p&gt;也找到有志同道合兄弟寫的 &lt;a href=&#34;https://github.com/Sydius/mbox-to-txt&#34;&gt;Sydius/mbox-to-txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但這位 S 弟兄可能只要純文字，所以不吃的格式特多，這次要的資料被碼成 base64&lt;/p&gt;
+&lt;p&gt;參考一下前人種樹是利用 &lt;a href=&#34;https://docs.python.org/2/library/mailbox.html&#34;&gt;python mailbox module&lt;/a&gt; 處理，copy 改下搞定&lt;/p&gt;- https://prpr.tw/posts/google-takeout/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>python xml vulnerabilities</title>
+        <link>https://prpr.tw/posts/python-xml-vulnerabilities/</link>
+        <pubDate>Mon, 13 Mar 2017 18:00:32 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/python-xml-vulnerabilities/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/python-xml-vulnerabilities/ -&lt;blockquote&gt;
+&lt;p&gt;It&amp;rsquo;s just XML, what could probably go wrong? - Christian Heimes&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And &amp;hellip;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;XML is crap. Really. There are no excuses. XML is nasty to parse for humans, and it&amp;rsquo;s a disaster to parse even for computers. There&amp;rsquo;s just no reason for that horrible crap to exist. - Linus Trovalds&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;issue&#34;&gt;Issue&lt;/h1&gt;
+&lt;p&gt;最近 review 公司的一些外部服務的 callback api 的安全性。&lt;/p&gt;
+&lt;p&gt;其中一個 api 交換資訊使用 xml 格式傳送，而 parse 時用 Python standard library 的 xml module&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.python.org/2/library/xml.html#xml-vulnerabilities&#34;&gt;而 xml module 有一些安全性上的弱點&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用 &lt;a href=&#34;https://en.wikipedia.org/wiki/Billion_laughs&#34;&gt;wiki 的 billion laughs&lt;/a&gt; sample code 當 payload 測試果然掛了，&lt;/p&gt;
+&lt;p&gt;充滿惡意的憤青們可以只用一台電腦癱瘓掉家裡所有 web node，&lt;/p&gt;
+&lt;p&gt;不過因為有鎖 ip ，所以也不是一個嚴重的安全性問題，廠廠。&lt;/p&gt;
+&lt;h1 id=&#34;solutions&#34;&gt;Solutions&lt;/h1&gt;
+&lt;p&gt;看到問題後第一想法是不要用 xml module 處理，改用 lxml 之類的 3rd party lib&lt;/p&gt;
+&lt;p&gt;後來想想這問題應該滿普遍的，應該會有其他解法可以考慮。&lt;/p&gt;
+&lt;p&gt;期望可以有 Monkey Patch 或是至少提供相同 API 讓 migration 變得容易&lt;/p&gt;
+&lt;p&gt;問 Google 老師找到 &lt;a href=&#34;https://github.com/tiran/defusedxml&#34;&gt;defusedxml&lt;/a&gt; 專案看起來有八成七像&lt;/p&gt;
+&lt;p&gt;提供了相同 API，在 xmlrpc 部分是用 monkey patch，可以無痛轉換。&lt;/p&gt;
+&lt;h1 id=&#34;case-closed&#34;&gt;Case closed&lt;/h1&gt;
+&lt;p&gt;基本上在一個後 json 時代講 xml 實用性實在不高，不過人在江湖走跳，&lt;/p&gt;
+&lt;p&gt;難免介接利用其他第三方服務，尤其是銀行業仍偏好使用 xml，&lt;/p&gt;
+&lt;p&gt;在 parse 的時候還是需要注意是否會產生類似安全性問題。&lt;/p&gt;
+&lt;p&gt;Bomb has benn defused, counter terrorists win!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;btw 找不到開頭引言的來源，所以確實 Python developer 曾經講過這句話，然後在 repo 被公開處刑？&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;- https://prpr.tw/posts/python-xml-vulnerabilities/ - </description>
+        </item>
+    
+    
+  </channel>
+</rss> 

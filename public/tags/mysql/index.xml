@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL on Ryan&#39;s blog</title>
+    <link>https://prpr.tw/tags/mysql/</link>
+    <description>Recent content in MySQL on Ryan&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 09 Dec 2017 13:19:56 +0800</lastBuildDate><atom:link href="https://prpr.tw/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL Tuple Comparison Issue</title>
+      <link>https://prpr.tw/posts/mysql-tuple-comparison-issue/</link>
+      <pubDate>Sat, 09 Dec 2017 13:19:56 +0800</pubDate>
+      
+      <guid>https://prpr.tw/posts/mysql-tuple-comparison-issue/</guid>
+      <description>&lt;p&gt;MySQL 5.6 tuple comparison bug&lt;/p&gt;
+&lt;p&gt;這是一個用 IN clause 比較 primary key 卻得到 full table scan 的故事&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/LIOTPaT.jpg&#34; alt=&#34;Imgur&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

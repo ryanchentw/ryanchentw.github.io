@@ -1,0 +1,476 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ryan&#39;s blog</title>
+    <link>https://prpr.tw/</link>
+    <description>Recent content on Ryan&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Mon, 21 Dec 2020 21:33:04 +0800</lastBuildDate>
+    
+        <atom:link href="https://prpr.tw/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Download S3 object partial results</title>
+        <link>https://prpr.tw/posts/s3-download-partial-results/</link>
+        <pubDate>Mon, 21 Dec 2020 21:33:04 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/s3-download-partial-results/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/s3-download-partial-results/ -&lt;p&gt;S3 does support the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Range_requests&#34;&gt;HTTP range request&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s useful when you want the partial lines from a big file.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/cli/latest/reference/s3api/get-object.html&#34;&gt;By aws s3 command line&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;aws s3api get-object --range bytes=0-10000 --bucket=[BUCKET] --key=[KEY] partial_results
+&lt;/code&gt;&lt;/pre&gt;- https://prpr.tw/posts/s3-download-partial-results/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>哈哈山與合歡山</title>
+        <link>https://prpr.tw/posts/haha-and-he-huan/</link>
+        <pubDate>Sat, 28 Nov 2020 21:54:53 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/haha-and-he-huan/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/haha-and-he-huan/ -&lt;p&gt;這是一個合歡山爬三次，但西峰還是沒完成的故事。&lt;/p&gt;
+&lt;p&gt;但天氣跟夥伴很讚，沒去西峰也不是很遺憾。&lt;/p&gt;
+&lt;p&gt;哈哈山是在石門山旁邊的小山，就在往北峰的路上，路程短，眺望北峰最好的地方，走過路過千萬不要錯過。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/jtwPqsL.jpg&#34; alt=&#34;&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;哈哈，十五分鐘撿三個山頭&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/FwrmPPY.jpg&#34; alt=&#34;&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;反射板路上&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/avszCrz.jpg&#34; alt=&#34;&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;當天 15 號，但不是這個月最圓的一天&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/FZfZEGu.jpg&#34; alt=&#34;&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;再晚一點的雲海&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/sJczsU7.jpg&#34; alt=&#34;&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;東峰夕照94讚&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/tBVGWcY.jpg&#34; alt=&#34;&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;手上的雪山西稜&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- https://prpr.tw/posts/haha-and-he-huan/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Jupterlab With System Monitor</title>
+        <link>https://prpr.tw/posts/jupyterlab-with-system-monitor/</link>
+        <pubDate>Sat, 28 Nov 2020 21:33:04 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/jupyterlab-with-system-monitor/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/jupyterlab-with-system-monitor/ -&lt;p&gt;&lt;img src=&#34;https://imgur.com/XDgbrds.jpg&#34; alt=&#34;system-monitor&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Try to swith to jupterlab, the cpu/mem graph looks greeeat.
+&lt;a href=&#34;https://github.com/jtpio/jupyterlab-system-monitor&#34;&gt;https://github.com/jtpio/jupyterlab-system-monitor&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;But install n-times, the graph still no showing.&lt;/p&gt;
+&lt;p&gt;Thanks my colleague Bill, indicate the version issue of &lt;code&gt;nbresuse&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Reinstall the package, finally works!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install node
+pip install jupyterlab
+pip install nbresuse==0.3.6
+jupyter labextension install jupyterlab-topbar-extension jupyterlab-system-monitor
+jupyter notebook --generate-config
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Generate the jupyter config and fill the display config&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;c.NotebookApp.ResourceUseDisplay.mem_limit = 16 * 1024 ** 3
+c.NotebookApp.ResourceUseDisplay.track_cpu_percent = True
+c.NotebookApp.ResourceUseDisplay.cpu_limit = 8
+&lt;/code&gt;&lt;/pre&gt;- https://prpr.tw/posts/jupyterlab-with-system-monitor/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>恆春，里龍山</title>
+        <link>https://prpr.tw/posts/hc-li-long/</link>
+        <pubDate>Mon, 19 Oct 2020 18:33:33 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/hc-li-long/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/hc-li-long/ -&lt;p&gt;十月初排了個假期到恆春學潛水，順便找找附近有沒有好爬的山，&lt;/p&gt;
+&lt;p&gt;找到&lt;a href=&#34;https://www.outsiders.com.tw/post/1390&#34;&gt;這篇採訪 Amouter 老闆的文章&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;裡面提到幾個路線，google map 看一下距離就決定是里龍山了。&lt;/p&gt;
+&lt;p&gt;里龍山有南北兩個登山口，南邊似乎因為颱風的關係，步道養護程度比較差，&lt;/p&gt;
+&lt;p&gt;因為是弱弱的外鄉人，還是選擇從妥當的北登山口開始，&lt;/p&gt;
+&lt;p&gt;北登山口可直接定位鯉龍山人文紀念館，開車遇岔路選左轉基督教園區可以一直往上開到登山口，登山口約四個車位。&lt;/p&gt;
+&lt;h1 id=&#34;簡略行程&#34;&gt;簡略行程&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;08:19 鯉龍山人文紀念館停車場&lt;/li&gt;
+&lt;li&gt;08:38 踢水泥路到步道入口，發現這邊也可以停車&lt;/li&gt;
+&lt;li&gt;09:55 南北登山口交匯處涼亭&lt;/li&gt;
+&lt;li&gt;10:50 三角點，耍廢半小時&lt;/li&gt;
+&lt;li&gt;13:14 步道入口處&lt;/li&gt;
+&lt;li&gt;13:30 回停車場&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/TghlfSb.jpg&#34; alt=&#34;停車場的風景，背山面海，風水寶地 &lt;3&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;停車場的風景，背山面海，風水寶地 ❤️&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/dc7G3eJ.jpg&#34; alt=&#34;登山口的標示&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;登山口的標示&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/Y6Xt76q.jpg&#34; alt=&#34;三角點&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;路上隨處可見的三角點標示 XDDD&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/pRfOPMo.jpg&#34; alt=&#34;&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;涼亭附近的洗臉盆?&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/tlvUjms.jpg&#34; alt=&#34;里龍山山頂&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;山頂，能見度普通，但還是可以看見整個恆春半島&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/rcOxdLt.jpg&#34; alt=&#34;三角點&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgur.com/GtD1HU0.jpg&#34; alt=&#34;金松辣椒醬&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;屏東在地辣椒醬，就是要這味&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;下山後直奔車城，心心念念的綠豆蒜一連吃了兩家，&lt;/p&gt;
+&lt;p&gt;參拜了福安宮，感謝土地公保佑一路平安。&lt;/p&gt;
+- https://prpr.tw/posts/hc-li-long/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>北插天山，出大景拉</title>
+        <link>https://prpr.tw/posts/fagus-hayatae/</link>
+        <pubDate>Tue, 19 Nov 2019 21:40:11 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/fagus-hayatae/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/fagus-hayatae/ -&lt;p&gt;北插天山從爬山以來就久聞大名，從初級的練腳力文章（現在想起來一點都不初級），有時候會看到一些紀錄會用北插時間來類比，因為自己沒有爬過，完全無法類比，心中纏繞著一股悔恨，終於趁今年山毛櫸季節，揪團衝了一波。&lt;/p&gt;
+&lt;p&gt;成員兩女四男，來回總共走了十一小時，走到最後一小時開始摸黑。踢出登山口，看到停車場忍不住背包丟著，躺在柏油路上思考人生，人活著好好的為什麼要來爬北插天山&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;行程簡略&#34;&gt;行程簡略&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;0730 停車場啟登
+0757 北插天山指示牌
+0817 赫威山三角點
+0904 岩壁微橫渡
+0958 水源地
+1011 塔開神木
+1029 木屋遺址
+1208 南北插叉路口
+1234 北插天山三角點
+1330 三角點開始回程
+1830 回停車場
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/ZuNJfP5.jpg&#34; alt=&#34;1&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;指示牌&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/Wh1pfkH.jpg&#34; alt=&#34;2&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;水源地附近的倒木，上面那幾啾看起來很有朝氣&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/JcZfP70.jpg&#34; alt=&#34;3&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;塔開神木！抱起來超舒服&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/dmr3doM.jpg&#34; alt=&#34;4&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;陡升路上的一段岩壁&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/NVOngQi.jpg&#34; alt=&#34;5&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;喘&amp;hellip;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;本次計劃從小烏來第二登山口來回，原本想說是三條路線中最短的一條，爬起來應該比較輕鬆，noooo，難度超乎想像！&lt;/p&gt;
+&lt;p&gt;一路爽爬到水源地，小休拍個照到木屋遺址，之後就一路陡升，時不時面對一層樓高的落差，
+跟路上的爛泥襲擊，天氣已經超級好，卻還是有爛泥，可見平時降雨量驚人，很爽了連爬兩個小時之後終於到了三角點。&lt;/p&gt;
+&lt;p&gt;山頂享用友人一路背上來的滷味，為什麼有人爬山帶整套滷味拉！不過超級好吃，尤其是那個藕片！&lt;/p&gt;
+&lt;p&gt;吃東西時，巧遇北插之怪，自稱 83 歲，登頂北插天山業已 917 次，曾多次單日來回南北插，年輕時兩年完成百岳，最快紀錄從滿月圓來回北插天山只要三小時半！邊吃邊覺得唬爛，回來查一下好像都是真的，有點風趣的阿伯，希望下次還可以跟他一起爬。&lt;/p&gt;
+- https://prpr.tw/posts/fagus-hayatae/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Headlight Nitecore NU32</title>
+        <link>https://prpr.tw/posts/headlight-nitecore-nu32/</link>
+        <pubDate>Mon, 18 Nov 2019 23:59:38 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/headlight-nitecore-nu32/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/headlight-nitecore-nu32/ -&lt;p&gt;又買了一個頭燈，之前使用 Black Diamond Storm 350，使用幾次發現一些不太順暢的地方。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;吃四個 AAA 電池有點麻煩，雖然有電量指示燈，每次帶還是有點恐懼感，要嘛換一組全新的電池，要嘛多帶一組電池。&lt;/li&gt;
+&lt;li&gt;操作複雜，因為功能很多，但只有一個按鈕，每次都要重新熟悉操作方式。&lt;/li&gt;
+&lt;li&gt;開起來總有一點高頻噪音（可能剛好買到機王）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;不過工作起來還是很稱職，亮度很夠，續航力也絕對夠爬一般摸早黑的行程，淋了幾次雨也都沒問題。&lt;/p&gt;
+&lt;p&gt;不過想買東西不需要理由，不要心動只要行動。&lt;/p&gt;
+&lt;p&gt;有一天突然看到 NiteCore NU25 這個頭燈，360 lm，卻只有 28g，又是充電電池，操作看一下簡單直覺，看了實在是心動動，後來考量了價錢、重量跟續航力，還是選續航力，最後買了 NU32。&lt;/p&gt;
+&lt;p&gt;買回來把玩一下上面的痛點都有解決&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;usb 充電，行動電源接著隔天又是一個好漢。&lt;/li&gt;
+&lt;li&gt;兩個按鈕，只有紅燈、主燈，沒有閃燈功能，亮度循環切換。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最令人喜歡的一點是亮度循環從較暗的亮度開始，漸次增強，我比較喜歡這種設計，很怕開燈閃瞎路人眼睛。&lt;/p&gt;
+&lt;p&gt;剛好最近爬北插走太慢，有摸到一點黑爽用一下，頭燈有四檔，個人覺得 2 檔有點弱，3 檔剛好，4 檔真是太爽拉直接照亮一片樹林，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;1 lumen&lt;/li&gt;
+&lt;li&gt;33 lumens&lt;/li&gt;
+&lt;li&gt;190 lumens&lt;/li&gt;
+&lt;li&gt;550 lumens&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;相對來說之前用 Black Diamond Storm 主燈是 350/90，副燈是 40/4 lumens，印象副燈開起來就很夠用惹，不知為啥 NU32 的 33 lumens 模式就感覺有點小弱。&lt;/p&gt;
+&lt;p&gt;因為沒摸幾個小時沒測到續航力，官方數據是寫 190 lumens 情況下可以撐 17 個小時，
+我個人不太相信，有空把電用完看看。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/5GdMqGx.jpg&#34; alt=&#34;官網圖&#34;&gt;&lt;/p&gt;
+&lt;p&gt;背面的背板感覺構造太簡單，強度有點堪慮。
+&lt;img src=&#34;https://i.imgur.com/bdOvctZ.jpg&#34; alt=&#34;背板&#34;&gt;&lt;/p&gt;
+&lt;p&gt;總之兩個都是好頭燈，下一個可能上 18650 了吧，就是要更亮一點，才能照亮前方的路。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/07jScx8.jpg&#34; alt=&#34;這是白天的樹&#34;&gt;
+J 今年的北插山毛櫸拉&lt;/p&gt;
+- https://prpr.tw/posts/headlight-nitecore-nu32/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>日本自助爬山 - 赤岳（八ヶ岳）</title>
+        <link>https://prpr.tw/posts/hiking-akadake-yatsukadake/</link>
+        <pubDate>Sat, 07 Sep 2019 00:08:08 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/hiking-akadake-yatsukadake/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/hiking-akadake-yatsukadake/ -&lt;p&gt;去年到妙高火打健走兩天，心心念念的就是明年要再來日本爬山&lt;/p&gt;
+&lt;p&gt;享受舒適、乾燥的山屋以及不同於台灣的自然景觀&lt;/p&gt;
+&lt;p&gt;於是就計畫了今年八月來場富士山 + 上高地的行程。然而計劃不周，飛抵日本後先爬富士山，在第二天登頂時氣象不佳，被風雨吹到懷疑人生，&lt;!-- raw HTML omitted --&gt;人活著好好的為什麼要來爬山&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;下山時決定當天在河口湖休養一下，修補一下身心靈，放棄了原本隔天衝上高地的計畫，轉向鄰近的赤岳。&lt;/p&gt;
+&lt;p&gt;赤岳因為是雪訓熱門地點有不少台灣人爬過，資訊很好找，是這趟旅程的備案，路程短，單程五～六小時可登頂，上稜線後又可以看到富士山，打個電話確認山屋有位置後就出發啦～&lt;/p&gt;
+&lt;h1 id=&#34;行程&#34;&gt;行程&lt;/h1&gt;
+&lt;p&gt;D1
+&lt;!-- raw HTML omitted --&gt;
+0816 甲府
+0923 茅野
+1110 美濃戶口
+1432 行者小屋
+1730 晚餐
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;D2
+&lt;!-- raw HTML omitted --&gt;
+0600 早餐
+0630 行者小屋出發
+0729 地蔵ノ頭（經地藏尾根）
+0807 赤岳頂
+0955 行者小屋（經文三郎尾根）
+1020 行者小屋出發
+1042 赤岳鉱泉小屋
+1100 赤岳鉱泉小屋回程
+1305 美濃戶口
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/Mb4aBhX.png&#34; alt=&#34;Route&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;d1&#34;&gt;D1&lt;/h1&gt;
+&lt;p&gt;帶著前一天晚餐甲府名物「餺飥」的祝福，一早搭 JR 到茅野準備搭巴士上山
+&lt;img src=&#34;https://i.imgur.com/SA2x7qF.jpg&#34; alt=&#34;車票&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;車上 100% 都是登山客&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;車程僅四十分鐘，隨即抵達美濃戶口，投完入山計畫書後，要踢一個小時車道，前往第一個休息點「赤岳/美濃戶山莊」
+踢車道時聽到幾次底盤的撞擊聲，想想一開始的停車場好像也停不少台，看來不是每個登山客都會選擇把車開進去挑戰林道呢 (´・ω・`)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/yRdK2VH.jpg&#34; alt=&#34;登山口1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;走南沢前往行者小屋，路況一路好走，後來下山走北沢覺得路況差不多，差在北沢一路有水相伴卡素細&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/YrrSEFn.jpg&#34; alt=&#34;路況&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/ThtYhFT.jpg&#34; alt=&#34;行者小屋&#34;&gt;
+很快就到了行者小屋，山屋內非常舒適，有暖爐及販售各種飲料/零嘴，可能旺季尾聲，又或是禮拜天，住的人極少，一個人獨享三人位的小空間。外面設有テント場，猜測是上山路線比較輕鬆，露營的人居然還住山小屋的人多，我是百分百支持舒適的山小屋拉。&lt;/p&gt;
+&lt;p&gt;用完晚飯後就窩在大廳享受暖爐、熱茶跟一小櫃書，二樓也有插座可以充手機，可以少帶一顆行動電源，輕量化 upup（電源開到八點半）&lt;/p&gt;
+&lt;p&gt;一個人上山還是有點孤單，Staff 似乎也在準備著明日早餐，大廳中飄逸著一點食物的香味，起身到處晃晃，意外發現 Staff 一位弟弟正在打 PS4 度過這夜晚，Damn 所以行動電源省下來的重量應該要多帶一隻手把來個台日交流才對！憤而上樓睡覺，睡眠品質極佳，一覺到天明。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/mBFRaVG.jpg&#34; alt=&#34;料金&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;料金&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/CyfxDj1.jpg&#34; alt=&#34;一樓拉比&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;就在這用餐，前方是個室入口&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/9jc5GMd.jpg&#34; alt=&#34;二樓就寢空間&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;睡覺小角落&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/PAjedOS.jpg&#34; alt=&#34;晚餐&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;入住的時候就跟我講晚餐是漢堡排，可惡很餓&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h1 id=&#34;d2&#34;&gt;D2&lt;/h1&gt;
+&lt;p&gt;早上五點半被細細速速欸聲音溫柔喚醒，沒有像在台灣山屋一樣聽到鬧鐘，究竟日本人是怎麼叫醒自己的呢？這是一個謎。
+洗洗刷個牙等放飯，早餐有納豆呢！&lt;!-- raw HTML omitted --&gt;但這個我不能吃，我會過敏。（禮貌微笑）&lt;!-- raw HTML omitted --&gt;，原封不動跟食器一起放回了回收口，ごちそうさん～&lt;/p&gt;
+&lt;p&gt;06:30 出發，走地藏尾根，聽說是一段陡升的爬坡呢，實際爬還好，&lt;!-- raw HTML omitted --&gt;覺得過譽了&lt;!-- raw HTML omitted --&gt;，倒是越爬風越大，早上看明明還有 12 度啊，趕緊披上雨衣。&lt;/p&gt;
+&lt;p&gt;上稜倒是比地圖上預估時間快，上稜前有一小段裸岩，雖然有鐵鍊但摸黑爬覺得有一點危險性，要摸黑建議走文三郎尾根上去唷～&lt;/p&gt;
+&lt;p&gt;因為舉目所及皆是白牆，壯觀的稜線、富士山、山下風景，這些通通都沒有，速速趕路登頂之後也不爬阿彌陀岳了，直接從文三郎尾根回山屋&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/v1Tdrlh.jpg&#34; alt=&#34;早餐&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;早餐&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/Su8IEMg.jpg&#34; alt=&#34;行者小屋與驚鴻一瞥的山下風景&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;行者小屋與驚鴻一瞥的山下風景&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/PnK7VBT.jpg&#34; alt=&#34;穩固的鐵梯&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;鐵梯，還滿穩的&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/I7YJxFp.jpg&#34; alt=&#34;地蔵ノ頭&#34;&gt;
+&lt;img src=&#34;https://i.imgur.com/XqTRCLV.jpg&#34; alt=&#34;赤岳&#34;&gt;&lt;/p&gt;
+&lt;p&gt;回山屋跟 Staff 妹妹買罐可樂之後，算一下時間尚早，還可以到赤岳鉱泉小屋，走北沢下山。
+Staff 妹妹會一點中文啊，跟昨天的弟弟看起來都國高中生而已，應該是一家人吧，難不成是家族事業 (x)，說了山頂整片霧的慘狀之後用中文叫我下次再來，好哦下次我會查好氣象 QQ&lt;/p&gt;
+&lt;p&gt;往赤岳鉱泉小屋先上後下，落差有一百公尺，下坡居多，30 分鐘搞定，這間山屋有溫泉可入浴呢，定好行者小屋才發現的，捶心肝．八岳有溫泉的山屋似乎不少間，很想試試爬山泡溫泉的感覺&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/hauojBy.jpg&#34; alt=&#34;到赤岳鉱泉小屋&#34;&gt;
+&lt;img src=&#34;https://i.imgur.com/VpztJPY.jpg&#34; alt=&#34;小屋附近的巨大菇菇&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;小屋附近的巨大菇菇&lt;!-- raw HTML omitted --&gt;
+&lt;img src=&#34;https://i.imgur.com/4BolPDk.jpg&#34; alt=&#34;覺得很詳細的路況解說&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;覺得很詳細的路況解說&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;下山走很快，兩小時就踢出來了，起霧的山頭不值得留戀，巴士 + JR 回東京。&lt;/p&gt;
+&lt;p&gt;整體來說這趟八岳還不錯，雖然登頂沒景，但是山屋舒適，里程短路又好走。受限於巴士時間，沒辦法走太多座，大部分人似乎都直接南北縱走，從赤岳走到硫磺岳，然後一樣下赤岳鉱泉小屋踢到美濃戶。&lt;/p&gt;
+&lt;p&gt;費用部分最貴還是交通，東京來回茅野 JR 約一萬初，或許也可以考慮高速巴士，錢可能更省一點。&lt;/p&gt;
+&lt;h1 id=&#34;refs&#34;&gt;Refs:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://userweb.alles.or.jp/akadake/&#34;&gt;赤岳鉱泉・行者小屋&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.alpico.co.jp/access/suwa/&#34;&gt;茅野巴士至美濃戶口&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/tw/app/tenki-jp-%E7%99%BB%E5%B1%B1%E5%A4%A9%E6%B0%97/id1144845642&#34;&gt;登山天氣&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.apple.com/tw/app/yamap/id558780450&#34;&gt;YAMAP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://prpr.tw/posts/hiking-akadake-yatsukadake/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Learning the Norman Layout 4 months</title>
+        <link>https://prpr.tw/posts/learning-the-norman-layout-4-months/</link>
+        <pubDate>Sun, 14 Jul 2019 21:57:44 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/learning-the-norman-layout-4-months/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/learning-the-norman-layout-4-months/ -&lt;p&gt;About 4 months after changing the typing layout to Norman.
+I think I will type with Norman last a long time (unless I&amp;rsquo;m interesting w/ another one).&lt;/p&gt;
+&lt;h1 id=&#34;i-forgot-qwerty&#34;&gt;I forgot QWERTY&lt;/h1&gt;
+&lt;p&gt;Typing bopomofo (Chinese typing, and it&amp;rsquo;s &lt;a href=&#34;https://twitter.com/rqou_/status/1101331385632022528&#34;&gt;interesting story&lt;/a&gt; is another challenge on ErgoDox, so first, I flash my ErgoDox&amp;rsquo;s firmware to use Norman, then I can still type bopomofo on my laptop&amp;rsquo;s keyboard. I will have some time will type with QWERTY. I can change both layout in minutes on that time.&lt;/p&gt;
+&lt;p&gt;But changing keyboard is clumsy. I start to use IME to change Norman and bopomofo after a month. That means my small time with QWERTY is gone. And I found that I cannot type with QWERTY fluently. OMG I forgot QWERTY! Feeling annoying when use other people&amp;rsquo;s laptop.&lt;/p&gt;
+&lt;h1 id=&#34;deliberate-practicing-is-important&#34;&gt;Deliberate practicing is important&lt;/h1&gt;
+&lt;p&gt;Achieve 40 ~ 50 WPM in 2 month. Guess how many WPM I can type after 4 months?
+Only 50 WPM, haha.&lt;/p&gt;
+&lt;p&gt;I practice almost randomly. Maybe twice a week and last about 5 or 10mins.
+To my way of thinking I will more, more faster since I type it all day. But the reality is not.&lt;/p&gt;
+&lt;p&gt;I still cannot type 60~70 easily. I think deliberate practicing and keep 1 or 2 month then I can achieve it.
+But 50 WPM is enough for me, maybe I will continue the lesson someday.&lt;/p&gt;
+&lt;h1 id=&#34;end&#34;&gt;End?&lt;/h1&gt;
+&lt;p&gt;I still cannot type in  6,70 speed. But I use Norman happily. Also found some bigram I struggle on it.
+Like &lt;code&gt;ck&lt;/code&gt; &lt;code&gt;jp&lt;/code&gt; &lt;code&gt;jpy&lt;/code&gt; but it&amp;rsquo;s not a popular bigrams.&lt;/p&gt;
+&lt;p&gt;I guess every layout have it&amp;rsquo;s own hard bigrams. Norman still a good candidate from QWERTY. Maybe it&amp;rsquo;s time to check Dvorak (the disaster you know).&lt;/p&gt;
+- https://prpr.tw/posts/learning-the-norman-layout-4-months/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Learning the Norman Layout 2 weeks</title>
+        <link>https://prpr.tw/posts/learning-norman-layout-week2/</link>
+        <pubDate>Sat, 23 Mar 2019 10:06:48 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/learning-norman-layout-week2/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/learning-norman-layout-week2/ -&lt;h1 id=&#34;my-shoulder&#34;&gt;My shoulder&lt;/h1&gt;
+&lt;p&gt;One day I&amp;rsquo;m looking for a split keyboard try to make my shoulder feel better at work.&lt;/p&gt;
+&lt;p&gt;I need to keep the round shoulder posture almost all day. Make my body curl and back pain sometimes.&lt;/p&gt;
+&lt;p&gt;What I found is &lt;a href=&#34;https://ergodox-ez.com/&#34;&gt;ErgoDox EZ&lt;/a&gt;, and received my new keyboard after 10 days.&lt;/p&gt;
+&lt;h1 id=&#34;ergodox&#34;&gt;ErgoDox&lt;/h1&gt;
+&lt;p&gt;ErgoDox is a split, ortholinear, fully programmable keyboard with thumb key matrix. So you can put any keys on any position to facilitate the thumb usage. And it&amp;rsquo;s need somtime to get used it.&lt;/p&gt;
+&lt;p&gt;Since my colleague is a diligent advocator of non-QWERTY layout (He use Dvorak)&lt;/p&gt;
+&lt;p&gt;I think why not changing my layout on this keyboard. So I did some survey on layouts.&lt;/p&gt;
+&lt;h1 id=&#34;why-choose-norman&#34;&gt;Why choose Norman&lt;/h1&gt;
+&lt;p&gt;Instead of Dvorak or Colemak.&lt;/p&gt;
+&lt;p&gt;Dvorak basically change everything. Change to it may does cost alot. Also abandoned the QWERTY short keys like C-a, C-c, C-v.&lt;/p&gt;
+&lt;p&gt;Colemak does keep the shortcuts, but I don&amp;rsquo;t like the home row design (QWERTY GH position).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://normanlayout.info/compare.html&#34;&gt;Norman layout&lt;/a&gt; website does explain a lot, pursuade me.&lt;/p&gt;
+&lt;p&gt;And found someone already use it for years. So finally I choose Norman.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aloysius.wordpress.com/2013/10/12/learning-the-norman-layout-week-1/&#34;&gt;https://aloysius.wordpress.com/2013/10/12/learning-the-norman-layout-week-1/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://people.ergodox-ez.com/aaron-patterson/&#34;&gt;https://people.ergodox-ez.com/aaron-patterson/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;typing-speed&#34;&gt;Typing speed?&lt;/h1&gt;
+&lt;p&gt;After 2 weeks practice. Basically use &lt;a href=&#34;https://typingclub.com/sportal/&#34;&gt;TypingClub&lt;/a&gt; and &lt;a href=&#34;http://klavaro.sourceforge.net/en/index.html&#34;&gt;Klavaro&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I can type Norman in 30~40 words per minute. My QWERTY speed is 50 WPM.&lt;/p&gt;
+&lt;p&gt;I think will take more time to concrete the muscle memory. During the practice. Muscle memory is everywhere.&lt;/p&gt;
+&lt;p&gt;Single char, bigram, popular words, although I already memorize the Norman position, and the fingers auto put on the QWERTY position ready to trigger.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s worth it to change the layout. I type QWERTY for many years (like everybody).&lt;/p&gt;
+&lt;p&gt;Make some practice I think everybody can chage their layout in 1 month.&lt;/p&gt;
+&lt;p&gt;I feel comfortable on typing, my hands move less than typing in QWERTY, and some word become vey easy to type like &lt;code&gt;test&lt;/code&gt; or &lt;code&gt;international&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;And I start the another typing lesson today &lt;a href=&#34;typing.io&#34;&gt;typing.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Fight against with another muscle memory. apply it on coding.&lt;/p&gt;
+&lt;p&gt;Apparently it needs more skill, speed down to about 25 words.&lt;/p&gt;
+&lt;p&gt;Let me try how long I can turn coding more fluently.&lt;/p&gt;
+- https://prpr.tw/posts/learning-norman-layout-week2/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>妙高、火打兩日縱走</title>
+        <link>https://prpr.tw/posts/myoko/</link>
+        <pubDate>Sat, 03 Nov 2018 14:34:21 +0800</pubDate>
+        
+        <guid>https://prpr.tw/posts/myoko/</guid>
+        <description>Ryan&#39;s blog https://prpr.tw/posts/myoko/ -&lt;h2 id=&#34;簡略行程&#34;&gt;簡略行程&lt;/h2&gt;
+&lt;p&gt;D0: 妙高高原民宿&lt;/p&gt;
+&lt;p&gt;D1: 纜車上山 -&amp;gt; 大谷避難山屋 -&amp;gt; 妙高山 -&amp;gt; 妙高山北峰 -&amp;gt; 黑澤池山屋&lt;/p&gt;
+&lt;p&gt;D2: 黑澤池山屋 -&amp;gt; 高谷池山屋 -&amp;gt; 火打山 -&amp;gt; 高谷池山屋 -&amp;gt; 笹峰高原登山口，巴士下山&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/xfckWd9.jpg&#34; alt=&#34;地圖&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;d0&#34;&gt;D0&lt;/h1&gt;
+&lt;p&gt;前一天先到山腳下住一晚，搭新幹線到上越妙高站再轉乘巴士到山腳下，明天一早再搭纜車上山。&lt;/p&gt;
+&lt;p&gt;妙高高原主要在冬季進行滑雪活動，在十月初這個時間點非常冷清，
+我搭的巴士只有我一個，我沒上車的話司機就要開空車轉圈圈了呢 (´・ω・`)&lt;/p&gt;
+&lt;p&gt;晚上跟民宿老闆娘聊天（比手畫腳），嘗試表達這件事，她秒懂回了一句說「上面沒有人吧。」
+哈哈哈，真是非常鄉下的地方，下午稍微走了赤倉溫泉一圈，只找到一間商店有賣東西，買了一些能量棒與泡麵當晚餐。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/txddXQu.jpg&#34; alt=&#34;妙高高原看妙高山&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;妙高高原看妙高山&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h1 id=&#34;d1&#34;&gt;D1&lt;/h1&gt;
+&lt;p&gt;隔天一早搭便車到纜車站，大概 30s 的車程感謝民宿老闆娘讓我省一段腳力 XD&lt;/p&gt;
+&lt;p&gt;登山口到大谷避難小屋是一路緩上，還滿好走的，小屋有廁所、水源、火山地形。也叫南地獄谷，
+地圖標示我覺得不準，時間標兩小時，只花了大概 80 分鐘就走到了，後半段到山頂也標兩小時，就真的是兩小時 XD&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;纜車上看妙高山，隔壁應該是弥八山&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/vZSqLXQ.jpg&#34; alt=&#34;鎖場&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;鎖場&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;後半段就陡上，一堆石頭，鎖場是最驚險的路段，有鐵鍊跟繩索可以抓，往上爬還滿安全，下山大概就很可怕了&lt;/p&gt;
+&lt;p&gt;民宿老闆娘說鎖場之後繼續 WALK WALK WALK 很快就到山頂了。然而這是謊言，過鎖場還要 40 分鐘才能登頂QQ（很想在山頂吃中餐）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/NqnXI9S.jpg&#34; alt=&#34;北峰&#34;&gt;&lt;/p&gt;
+&lt;p&gt;登頂，滿是霧氣&lt;!-- raw HTML omitted --&gt;無展望&lt;!-- raw HTML omitted --&gt;如置身仙境，趕快拍個攻頂照洗洗睡&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;過北峰下山準備到大倉乘越，毫不意外的是陡下，乘越就鞍部拉，到鞍部之後再翻一個小山頭就到山屋了，下山走一段就開始沒手機訊號，一路到山屋都沒有再抓到訊號&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/JYXVLRC.jpg&#34; alt=&#34;大倉乘越&#34;&gt;
+大倉乘越
+&lt;img src=&#34;https://i.imgur.com/9lpewL1.jpg&#34; alt=&#34;長助池&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;霧氣剛好散去，驚鴻一瞥的長助池秋色，要繞一小段路就沒特別過去&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/t6C5BbU.jpg&#34; alt=&#34;黑澤池山屋&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;黑澤池山屋，八角形的外觀非常特別，三層結構，右邊是放鞋子的寮仔&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;山屋採全預約制，快到山屋的時候遇到一個外國人回頭往妙高山走，算一下時間現在往回走肯定摸黑，
+問一下為啥往回走，她說因為沒預約，所以山屋不給睡，語氣中透了一點無奈，因為她原本預約的時間剛好有颱風，所以晚了幾天過來。
+晚上看山屋仍有空位，不能理解沒預約就不讓睡的堅持，確認她有頭燈也就目送她離開&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/4lMoRsN.jpg&#34; alt=&#34;價格表&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;價格表&lt;!-- raw HTML omitted --&gt;
+&lt;img src=&#34;https://i.imgur.com/pW1Ox4m.jpg&#34; alt=&#34;山屋內部&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;採光&lt;!-- raw HTML omitted --&gt;
+&lt;img src=&#34;https://i.imgur.com/NEw03fj.jpg&#34; alt=&#34;山屋內部&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;山屋內部，睡三樓&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;山屋不提供開水，直接指了一罐 400 yen 的礦泉水給我，靠是文化衝擊，居然沒開水，懶得燒就買了一瓶水一瓶可樂等放飯，&lt;/p&gt;
+&lt;p&gt;等放飯的時間原本在外面喝啤酒 (500 yen) 的大叔就直接鋪棉被就寢了，靠是文化衝擊，五點多就在山屋睡大覺。&lt;!-- raw HTML omitted --&gt;少見多怪&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;本日山屋爆滿，遭遇一百多個小學生健行，山屋安排他們先用餐，坐在三樓一直聞到樓下飄上來的咖哩香，身心靈都準備好要吃咖哩了，結果一下去說咖哩被吃完了，換成佃煮之類的東西 QQQQQQ&lt;/p&gt;
+&lt;p&gt;吃完就洗洗睡了，山屋內部非常乾燥，上面也有衣架給你晾衣服，隔天起來衣服已經全乾。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/N1tDVLQ.jpg&#34; alt=&#34;黑澤池與山屋&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;黑澤池與山屋&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h1 id=&#34;d2&#34;&gt;D2&lt;/h1&gt;
+&lt;p&gt;隔天早餐輪到成熟的大人們先吃，五點半放飯，吃蛋餅皮抹果醬，吃完就出發往高谷池，也是翻過一個小山頭來到高谷池山屋，高谷池曾入選 &lt;a href=&#34;https://www.joetsutj.com/articles/52123959&#34;&gt;CNN 日本の最も美しい場所31選&lt;/a&gt; 大概長這樣
+&lt;img src=&#34;https://cdn.joetsutj.com/storage/oi/f8497b2e.jpg&#34; alt=&#34;日本の最も美しい場所31選&#34;&gt;
+然而我看到的是這樣
+&lt;img src=&#34;https://i.imgur.com/p01cCkD.jpg&#34; alt=&#34;高谷池&#34;&gt;&lt;/p&gt;
+&lt;p&gt;捶心肝，大概是颱風剛過的關係，不見滿山紅黃，下山後翻九月底的 instagram 照片更是久久不能自已，
+這次爬山主要就是想看看高谷池，沒訂到高谷池山屋已經很鬱卒&lt;!-- raw HTML omitted --&gt;現在你又給我看這個&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;振奮一下精神繼續往火打前進，往火打路況極好，前半段濕原都是木棧道，後半段登頂像合歡東峰，一路階梯往上
+&lt;img src=&#34;https://i.imgur.com/H0evGq9.jpg&#34; alt=&#34;天狗庭&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;天狗庭與木棧道&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/I6Nyshj.jpg&#34; alt=&#34;鄰近的燒山跟北阿爾卑斯&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;鄰近的燒山跟北阿爾卑斯，白色那顆應該是五龍岳&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/B02IcBc.jpg&#34; alt=&#34;妙高跟你看不到的富士山&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;妙高山、破火口、以及很小很小的富士山&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/Ndamtzv.jpg&#34; alt=&#34;火打山&#34;&gt;&lt;/p&gt;
+&lt;p&gt;天氣極好，富士山是山友熱心提示才發現，離這麼遠看辨識度還是很高&lt;/p&gt;
+&lt;p&gt;木棧道有點窄，會車都會心跳加速臉紅紅，&lt;/p&gt;
+&lt;p&gt;下山遇到正要上去的小學生們，跟他們會車會很有活力的對我喊「摳尼吉哇」一次大概會車 30 個，
+我也要一直講「摳尼吉哇」反擊回去，他們實在太有活力，太耀眼了&lt;/p&gt;
+&lt;p&gt;山頂風很大，待一會兒就下山了，回到高谷池山屋煮水吃中飯，再往下走到笹峰高原搭巴士下山&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/qlf1WOk.jpg&#34; alt=&#34;擴建中的高谷池山屋&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;擴建中的高谷池山屋&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/oi7Ypd0.jpg&#34; alt=&#34;笹峰高原登山口&#34;&gt;&lt;/p&gt;
+&lt;p&gt;這次因為訂到黑澤池山屋的關係選擇從妙高山開始，看其他人遊記好像都從火打山開始，從笹峰高原開始到火打山，路況都很不錯，只有 12 曲那邊陡一點。相對來說妙高山就難爬得多，爛泥不少，跨步落差也比較大，第一天登山口只有碰到三組人，登山道再跟另一條路線燕溫泉交會有再碰到一些人，但都是單日來回，熊鈴、短褲、CamelBak 野跑水袋，步伐輕快有點帥。如果從妙高下山也有班次比較密集的纜車可以搭，巴士班數一天三班來回實在有點不方便。&lt;/p&gt;
+&lt;p&gt;這次計畫滿久的，能完美實踐非常開心，感謝老天爺賞臉與路上所有人的幫助。&lt;/p&gt;
+&lt;h2 id=&#34;refs&#34;&gt;Refs&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;妙高、火打遊記&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://knoxyang.blogspot.com/2017/09/blog-post_20.html&#34;&gt;http://knoxyang.blogspot.com/2017/09/blog-post_20.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://froda.pixnet.net/blog/post/226231448-myoko-mountain&#34;&gt;http://froda.pixnet.net/blog/post/226231448-myoko-mountain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://solomo.xinmedia.com/1446473702/148944-myoko&#34;&gt;https://solomo.xinmedia.com/1446473702/148944-myoko&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;日本登山 App&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://yamap.co.jp/&#34;&gt;YAMAP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;地圖、山屋電話、跟預估時程&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://tw.myoko-note.jp/tourism/outdoor_activity/climbing.html&#34;&gt;妙高市觀光局&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://keinanbus.com/&#34;&gt;笹ヶ峰直行バス&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.akr-sky.com/&#34;&gt;天空纜車&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.facebook.com/myokotaiwan/&#34;&gt;來去日本妙高找台灣好媳婦&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;登山計画書&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E7%99%BB%E5%B1%B1%E8%A8%88%E7%94%BB%E6%9B%B8&#34;&gt;https://ja.wikipedia.org/wiki/%E7%99%BB%E5%B1%B1%E8%A8%88%E7%94%BB%E6%9B%B8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://prpr.tw/posts/myoko/ - </description>
+        </item>
+    
+    
+  </channel>
+</rss> 

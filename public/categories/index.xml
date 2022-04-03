@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Ryan&#39;s blog</title>
+    <link>https://prpr.tw/categories/</link>
+    <description>Recent content in Categories on Ryan&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Mon, 21 Dec 2020 21:33:04 +0800</lastBuildDate><atom:link href="https://prpr.tw/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>coding</title>
+      <link>https://prpr.tw/categories/coding/</link>
+      <pubDate>Mon, 21 Dec 2020 21:33:04 +0800</pubDate>
+      
+      <guid>https://prpr.tw/categories/coding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hiking</title>
+      <link>https://prpr.tw/categories/hiking/</link>
+      <pubDate>Sat, 28 Nov 2020 21:54:53 +0800</pubDate>
+      
+      <guid>https://prpr.tw/categories/hiking/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
