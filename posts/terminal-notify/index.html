@@ -1,0 +1,14 @@
+<!doctype html><html lang=zh-tw><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.96.0"><title>Terminal Notify | Ryan's blog</title><link rel=stylesheet href=https://blog.prpr.tw/css/simpleness.css><link rel=canonical href=https://blog.prpr.tw/posts/terminal-notify/><link rel=alternate type=application/rss+xml href title="Ryan's blog"><link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css rel=stylesheet></head><body class=container><nav class=navigation><div class=nav-left><div class="nav-item nav-title"><a href=https://blog.prpr.tw/>Ryan's blog</a></div><div class="nav-item nav-menu"><a href=/categories/coding>Coding</a>
+<a href=/categories/hiking>Hiking</a></div></div><div class="nav-item nav-right fontawesome"></div></nav><article class=post><header class=post-header><h1 style=text-align:center>Terminal Notify</h1><div class=post-metadata><time datetime=2017-12-26T09:57:45+08:00>December 26, 2017</time> &nbsp;
+<i class="fas fa-folder"></i>
+<a href=/categories/coding>coding</a>
+&nbsp;</div></header><div class=post-text><p>最近公司 build tool 因為專案爆肥越來越慢，build code 要花個十分鐘左右，不太行啊， ~泡咖啡時間變長了呀逼~</p><p>不過暫時沒有時間去優化他，同事提出一個</p><pre tabindex=0><code>build-code &amp;&amp; printf &#39;\a&#39;
+</code></pre><p>build 完扣給你逼一下</p><p>這招透過 SSH 連進去當然不會逼，如果用 iTerm2 就是意思意思閃一下並亮個紅燈給你看</p><p>但是好像還是要喵一下 session tab or Dock icon，似乎不是很方便啊</p><p>這時候另一個同事又提出用 <a href=https://devel.freebsoft.org/speechd>speech-dispatcher</a> 跟 <a href=https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/say.1.html>say</a> 講話給你聽</p><p>欸，這想法蒸蚌！</p><p>不過這玩意 via SSH 不 work 啊！覺得聲音通知是 developer 的未來的我在 Google 努力找尋其他方法。</p><p>後來想到 iterm2 好像有功能可以抓 output 來觸發事件，組了一下確實會動，抓 build tool 最後的 Success 文字</p><p>config 像這樣，build 完之後就會聲音通知你了哦，就像請了一位秘書呢 ^.&lt;
+<img src=https://i.imgur.com/TGaTOFA.png alt=Imgur></p><p>列出支援的聲音檔，廣東話豪可愛ㄛ</p><pre tabindex=0><code>&gt; say -v &#39;?&#39;
+Mei-Jia             zh_TW    # 您好，我叫美佳。我說國語。
+Sin-ji              zh_HK    # 您好，我叫 Sin-ji。我講廣東話。
+Ting-Ting           zh_CN    # 您好，我叫Ting-Ting。我讲中文普通话。
+</code></pre><p>Ref:</p><ul><li><a href=https://www.iterm2.com/documentation-triggers.html>iTerm2 triggers</a></li><li><a href=https://github.com/julienXX/terminal-notifier>macOS push notification</a></li></ul></div><footer class=post-footer></footer><div class=comments><div class=comments></div></div></article><div class=foot>&copy; - 2022 &#183;
+<a href=/>Ryan's blog</a> &#183;
+Theme <a href=https://github.com/RainerChiang/simpleness>Simpleness</a> Powered by <a href=https://gohugo.io/>Hugo</a> &#183;
+<a href=#><i class="fas fa-chevron-up"></i></a></div></body></html>
