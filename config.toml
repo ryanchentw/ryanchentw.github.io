@@ -1,13 +1,18 @@
 baseURL = "https://prpr.tw/"
 languageCode = "zh-TW"
+
 title = "Ryan's blog"
-theme = "hugo_theme_pickles"
+author = "Ryan Chen"
+theme = "simpleness"
+
+enableInlineShortcodes = true
+enableEmoji = true
+enableDisqus = true
 
 [params]
     paginate = 10
     twitter = "v_kiiii"
     github = "ryanchentw"
-    author = "Ryan Chen"
     subtitle = "coding, hiking and murmurs"
     bio = "Average python programmer. Love hiking and cycling"
     ga_api_key = "UA-106885738-1"

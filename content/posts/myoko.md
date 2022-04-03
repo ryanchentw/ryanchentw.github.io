@@ -132,23 +132,19 @@ D2: 黑澤池山屋 -> 高谷池山屋 -> 火打山 -> 高谷池山屋 -> 笹峰
 
 
 ## Refs
-> 妙高、火打遊記
+- 妙高、火打遊記
+  - http://knoxyang.blogspot.com/2017/09/blog-post_20.html
+  - http://froda.pixnet.net/blog/post/226231448-myoko-mountain
+  - https://solomo.xinmedia.com/1446473702/148944-myoko
 
-- http://knoxyang.blogspot.com/2017/09/blog-post_20.html
-- http://froda.pixnet.net/blog/post/226231448-myoko-mountain
-- https://solomo.xinmedia.com/1446473702/148944-myoko
+- 日本登山 App
+  - [YAMAP](https://yamap.co.jp/)
 
-> 日本登山 App
+- 地圖、山屋電話、跟預估時程
+  - [妙高市觀光局](http://tw.myoko-note.jp/tourism/outdoor_activity/climbing.html)
+  - [笹ヶ峰直行バス](http://keinanbus.com/)
+  - [天空纜車](http://www.akr-sky.com/)
+  - [來去日本妙高找台灣好媳婦](https://www.facebook.com/myokotaiwan/)
 
-- [YAMAP](https://yamap.co.jp/)
-
-> 地圖、山屋電話、跟預估時程
-
-- [妙高市觀光局](http://tw.myoko-note.jp/tourism/outdoor_activity/climbing.html)
-- [笹ヶ峰直行バス](http://keinanbus.com/)
-- [天空纜車](http://www.akr-sky.com/)
-- [來去日本妙高找台灣好媳婦](https://www.facebook.com/myokotaiwan/)
-
-> 登山計画書
-
-- [https://ja.wikipedia.org/wiki/%E7%99%BB%E5%B1%B1%E8%A8%88%E7%94%BB%E6%9B%B8](https://ja.wikipedia.org/wiki/%E7%99%BB%E5%B1%B1%E8%A8%88%E7%94%BB%E6%9B%B8)
+- 登山計画書
+  - [https://ja.wikipedia.org/wiki/%E7%99%BB%E5%B1%B1%E8%A8%88%E7%94%BB%E6%9B%B8](https://ja.wikipedia.org/wiki/%E7%99%BB%E5%B1%B1%E8%A8%88%E7%94%BB%E6%9B%B8)
