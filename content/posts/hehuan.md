@@ -1,6 +1,9 @@
 ---
 title: "哈哈山與合歡山"
 date: 2020-11-28T11:22:20+08:00
+
+Categories:
+  - Hiking
 ---
 ![cover](https://imgur.com/jtwPqsL.jpg)
 
@@ -12,8 +15,17 @@ date: 2020-11-28T11:22:20+08:00
 
 哈哈，十五分鐘撿三個山頭
 
+反射板路上
 ![反射板路上](https://imgur.com/FwrmPPY.jpg)
+
+當天 15 號，但不是這個月最圓的一天
 ![當天 15 號，但不是這個月最圓的一天](https://imgur.com/avszCrz.jpg)
+
+再晚一點的雲海
 ![再晚一點的雲海](https://imgur.com/FZfZEGu.jpg)
+
+東峰夕照94讚
 ![東峰夕照94讚](https://imgur.com/sJczsU7.jpg)
+
+雪山西稜
 ![手上的雪山西稜](https://imgur.com/tBVGWcY.jpg)

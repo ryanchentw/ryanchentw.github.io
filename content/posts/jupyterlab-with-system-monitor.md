@@ -1,6 +1,9 @@
 ---
 title: "Jupyterlab With System Monitor"
 date: 2020-11-28T21:33:42+08:00
+
+Categories:
+  - coding
 ---
 
 ![alt](https://raw.githubusercontent.com/jtpio/jupyterlab-system-monitor/main/doc/screencast.gif)

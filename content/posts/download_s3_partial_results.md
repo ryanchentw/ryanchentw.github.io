@@ -1,6 +1,9 @@
 ---
 title: "Download s3 partial results"
 date: 2020-12-21T11:33:36+08:00
+
+Categories:
+  - coding
 ---
 
 S3 does support the HTTP [range request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Range_requests)
