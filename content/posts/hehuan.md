@@ -1,6 +1,7 @@
 ---
 title: "哈哈山與合歡山"
 date: 2020-11-28T11:22:20+08:00
+enableDisqus: true
 
 Categories:
   - Hiking

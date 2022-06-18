@@ -1,6 +1,7 @@
 ---
 title: "Terminal Notify"
 date: 2017-12-26T09:57:45+08:00
+enableDisqus: true
 Categories:
   - coding
 ---

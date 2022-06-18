@@ -1,6 +1,7 @@
 ---
 title: "Download s3 partial results"
 date: 2020-12-21T11:33:36+08:00
+enableDisqus: true
 
 Categories:
   - coding

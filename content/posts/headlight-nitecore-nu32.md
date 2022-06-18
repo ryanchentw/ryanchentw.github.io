@@ -1,6 +1,7 @@
 ---
 title: "Headlight Nitecore Nu32"
 date: 2019-11-18T23:59:38+08:00
+enableDisqus: true
 ---
 
 又買了一個頭燈，之前使用 Black Diamond Storm 350，使用幾次發現一些不太順暢的地方。

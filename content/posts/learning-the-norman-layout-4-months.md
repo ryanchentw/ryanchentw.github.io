@@ -1,6 +1,7 @@
 ---
 title: "Learning the Norman Layout 4 months"
 date: 2019-07-14T21:57:44+08:00
+enableDisqus: true
 Categories:
   - Coding
 Tags:

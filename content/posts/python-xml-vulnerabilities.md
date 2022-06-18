@@ -2,6 +2,7 @@
 date = "2017-03-13T18:00:32+08:00"
 title = "python xml vulnerabilities"
 image = "meme/xml.jpg"
+enableDisqus = true
 categories = [
     "coding"
 ]

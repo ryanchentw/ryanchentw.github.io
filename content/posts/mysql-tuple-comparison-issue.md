@@ -1,6 +1,7 @@
 ---
-title: "Mysql Tuple Comparison Issue"
+title: "MySQL Tuple Comparison Issue"
 date: 2017-12-09T13:19:56+08:00
+enableDisqus: true
 Categories:
   - coding
 Tags:
