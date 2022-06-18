@@ -1,5 +1,6 @@
 ---
 title: "初老工程師的焦慮"
+enableDisqus: true
 date: 2022-04-03T13:18:37+08:00
 toc: true
 ---

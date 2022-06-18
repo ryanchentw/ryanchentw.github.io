@@ -1,6 +1,7 @@
 ---
 title: "妙高、火打兩日縱走"
 date: 2018-11-03T14:34:21+08:00
+enableDisqus: true
 Categories:
   - Hiking
 Tags:

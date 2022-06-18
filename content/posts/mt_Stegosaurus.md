@@ -1,6 +1,7 @@
 ---
 title: "熱得要命王國 - 劍龍稜"
 date: 2021-03-28T11:40:26+08:00
+enableDisqus: true
 
 Categories:
   - Hiking

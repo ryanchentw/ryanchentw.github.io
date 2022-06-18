@@ -1,6 +1,7 @@
 ---
 title: "日本自助爬山 - 赤岳（八ヶ岳）"
 date: 2019-09-07T00:08:08+08:00
+enableDisqus: true
 Categories:
   - Hiking
 Tags:
