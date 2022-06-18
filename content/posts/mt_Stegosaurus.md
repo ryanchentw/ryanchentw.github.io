@@ -18,9 +18,6 @@ Categories:
 但回頭看照片大家都是笑的，形象管理做得非常好（？
 
 
-剛開始就快往生
-![剛開始就快往生](https://i.imgur.com/GuL4IDn.jpg)
-
 成為山羊的感覺
 ![成為山羊的感覺](https://i.imgur.com/cn8exsA.jpg)
 
