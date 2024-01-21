@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ryan's blog</title><link>https://blog.cwc.tw/posts/</link><description>Recent content in Posts on Ryan's blog</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Sat, 08 Apr 2023 09:58:01 +0800</lastBuildDate><atom:link href="https://blog.cwc.tw/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Why the secrets Module is the Ideal Choice for Generating Random Strings in Python</title><link>https://blog.cwc.tw/posts/python-secrets-module/</link><pubDate>Sat, 08 Apr 2023 09:58:01 +0800</pubDate><guid>https://blog.cwc.tw/posts/python-secrets-module/</guid><description>以前就一直很愛用 ruby 提供的 securerandom 來產生隨機字串，
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ryan's blog</title><link>https://blog.cwc.tw/posts/</link><description>Recent content in Posts on Ryan's blog</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Sat, 08 Apr 2023 09:58:01 +0800</lastBuildDate><atom:link href="https://blog.cwc.tw/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Why the secrets Module is the Ideal Choice for Generating Random Strings in Python</title><link>https://blog.cwc.tw/posts/python-secrets-module/</link><pubDate>Sat, 08 Apr 2023 09:58:01 +0800</pubDate><guid>https://blog.cwc.tw/posts/python-secrets-module/</guid><description>
+以前就一直很愛用 ruby 提供的 securerandom 來產生隨機字串，
 但之前長時間使用 Python2 進行開發，一直忽略了 Python3 應該也會有類似的 module，
 直到昨天有需求又查了一下發現，ㄏㄏ早在 3.6 就有提供這個 module 了，試一下跟 securerandom 87% 像，推薦給大家
 簡單來說用 secrets 的好處是比起傳統 random module 產生出來的隨機字串
 更具有密碼學上的安全性 更快，更簡單可以產生字串 原理的話其實就是用 os.urandom 取代 random module 內的擬隨機演算法
-# 偷懶版本，要注意 32 是 bytes，實際產生出來的長度因為 base64 encode 的關係會超過 32 from secrets import token_urlsafe print(token_urlsafe(32)) # 長一點的版本，使用 secrets.choice import secrets import string alphabet = string.ascii_letters + string.digits random_string = &amp;#39;&amp;#39;.join(secrets.choice(alphabet) for i in range(16)) print(random_string) ChatGPT 的回答 The benefits of using the secrets module to generate random strings (and other values) over the random module are: Cryptographic security: The secrets module uses a cryptographically secure random number generator provided by the operating system, which is designed to be resistant to prediction and manipulation.</description></item><item><title>Orbstack the Docker Desktop Replacement</title><link>https://blog.cwc.tw/posts/orbstack-the-docker-desktop-replacement/</link><pubDate>Wed, 29 Mar 2023 09:28:43 +0800</pubDate><guid>https://blog.cwc.tw/posts/orbstack-the-docker-desktop-replacement/</guid><description>身為一個資料水管工，在開發的時候常常需要用 docker compose 把整套 Airflow 拉起來測試，
+#### 偷懶版本，要注意 32 是 bytes，實際產生出來的長度因為 base64 encode 的關係會超過 32 from secrets import token_urlsafe print(token_urlsafe(32)) #### 長一點的版本，使用 secrets.choice import secrets import string alphabet = string.ascii_letters + string.digits random_string = &amp;#39;&amp;#39;.join(secrets.choice(alphabet) for i in range(16)) print(random_string) ChatGPT 的回答 The benefits of using the secrets module to generate random strings (and other values) over the random module are: Cryptographic security: The secrets module uses a cryptographically secure random number generator provided by the operating system, which is designed to be resistant to prediction and manipulation.</description></item><item><title>Orbstack the Docker Desktop Replacement</title><link>https://blog.cwc.tw/posts/orbstack-the-docker-desktop-replacement/</link><pubDate>Wed, 29 Mar 2023 09:28:43 +0800</pubDate><guid>https://blog.cwc.tw/posts/orbstack-the-docker-desktop-replacement/</guid><description>
+身為一個資料水管工，在開發的時候常常需要用 docker compose 把整套 Airflow 拉起來測試，
 這時候我的 intel-based 筆電常常就會起飛，在咖啡廳都被路人瞪，讓我非常不好意思。
 昨天試玩了一下 OrbStack，覺得好棒棒
 第一點是 OrbStack 啟動速度超級快！
@@ -15,29 +17,36 @@ CPU 部分也滿不錯，之前開 Docker Desktop 的時候其他東西都會比
 開發體驗很差，索性開發完才拉起來測試，現在可以邊跑邊開發了，法喜充滿。
 轉換的痛點
 需要升級到 macOS Ventura (13.2?) 所有 image 要重 build behind the scenes
-背後的原理，是利用 macOS Ventura 提供的 Virtualization Framework，share kernel 跟 windows 的 WSL2 很像 未來會收錢，且用且珍惜</description></item><item><title>BigQuery JSON_VALUE_ARRAY, JSON_QUERY_ARRAY 差異跟小雷</title><link>https://blog.cwc.tw/posts/bq_json_value_array/</link><pubDate>Fri, 28 Oct 2022 11:45:27 +0800</pubDate><guid>https://blog.cwc.tw/posts/bq_json_value_array/</guid><description>JSON_VALUE_ARRAY 只吃 scalar value
+背後的原理，是利用 macOS Ventura 提供的 Virtualization Framework，share kernel 跟 windows 的 WSL2 很像 未來會收錢，且用且珍惜</description></item><item><title>BigQuery JSON_VALUE_ARRAY, JSON_QUERY_ARRAY 差異跟小雷</title><link>https://blog.cwc.tw/posts/bq_json_value_array/</link><pubDate>Fri, 28 Oct 2022 11:45:27 +0800</pubDate><guid>https://blog.cwc.tw/posts/bq_json_value_array/</guid><description>
+JSON_VALUE_ARRAY 只吃 scalar value
 任何不在 {string, number,boolean} 都會變成 NULL, 像是
-select JSON_VALUE_ARRAY(&amp;#39;{&amp;#34;product_ids&amp;#34;: [UCCU]}&amp;#39;, &amp;#34;$.product_ids&amp;#34;); -- Row	f0_	1	null 但如果裡面有 NULL 則會噴錯
+select JSON_VALUE_ARRAY(&amp;#39;{&amp;#34;product_ids&amp;#34;: [UCCU]}&amp;#39;, &amp;#34;$.product_ids&amp;#34;); -- Row f0_ 1 null 但如果裡面有 NULL 則會噴錯
 select JSON_VALUE_ARRAY(&amp;#39;{&amp;#34;product_ids&amp;#34;: [null]}&amp;#39;, &amp;#34;$.product_ids&amp;#34;); Array cannot have a null element; error in writing field f0_
 啊如果我就是要 scalar value 裡面又可能有 null 怎麼辦？ 這邊可以改用 JSON_QUERY_ARRAY 替代，但因為 output 不同（多了 double quote），視資料情況可以直接 trim 掉處理
-SELECT ARRAY(SELECT TRIM(item, &amp;#39;&amp;#34;&amp;#39;) FROM UNNEST(JSON_QUERY_ARRAY(&amp;#39;{&amp;#34;product_ids&amp;#34;: [null, 1, 2, 3]}&amp;#39;, &amp;#34;$.product_ids&amp;#34;)) AS item);</description></item><item><title>打包 markdown 筆記並上傳到 R2 (S3 like service)</title><link>https://blog.cwc.tw/posts/upload_markdowns_to_r2/</link><pubDate>Sat, 20 Aug 2022 15:22:09 +0800</pubDate><guid>https://blog.cwc.tw/posts/upload_markdowns_to_r2/</guid><description>自從用 markdown 開始寫工作日誌與筆記，一直放在 iCloud 上面，之前看到 iCloud 掉資料的新聞覺得好像還是有必要多異地備份一下，那時候選了 S3，看重的當然是 11 nines 的耐用性，這樣畢生筆記萬無一失了吧。
+SELECT ARRAY(SELECT TRIM(item, &amp;#39;&amp;#34;&amp;#39;) FROM UNNEST(JSON_QUERY_ARRAY(&amp;#39;{&amp;#34;product_ids&amp;#34;: [null, 1, 2, 3]}&amp;#39;, &amp;#34;$.product_ids&amp;#34;)) AS item);</description></item><item><title>打包 markdown 筆記並上傳到 R2 (S3 like service)</title><link>https://blog.cwc.tw/posts/upload_markdowns_to_r2/</link><pubDate>Sat, 20 Aug 2022 15:22:09 +0800</pubDate><guid>https://blog.cwc.tw/posts/upload_markdowns_to_r2/</guid><description>
+自從用 markdown 開始寫工作日誌與筆記，一直放在 iCloud 上面，之前看到 iCloud 掉資料的新聞覺得好像還是有必要多異地備份一下，那時候選了 S3，看重的當然是 11 nines 的耐用性，這樣畢生筆記萬無一失了吧。
 這陣子發現 Cloudflare 的 R2 可以開始用 beta 版本了，基於我本人是 Cloudflare 無腦粉，馬上就想把目前的筆記也丟一份放在上面，於是就來研究一下。
 首先 Cloudflare R2 跟 S3 一樣是 11 nines，對外宣稱的耐用性跟 S3 一樣，再來是每 GB 價錢，R2 目前是 $0.015 per GB per month，跟 S3 Virginia $0.023 比起來低了 35%，再來是資料不收輸出的頻寬費用，這點我自己很好奇，那不就可以拿來做一個免費的圖床？最後是跟 s3 相容的 api 把 api token 申請好之後就可以直接用 aws cli 上傳檔案。
-一開始到 https://dash.cloudflare.com/sign-up/r2 申請服務，可以看到開 bucket 是不用選 region 的，下面說明 R2 buckets are automatically distributed across Cloudflare's data centers 另外也注意到 bucket name 應該是帳號內不能相同，跟 AWS 整個 region 不能有相同的 bucket name 不一樣。</description></item><item><title>抓網站內容做成電子書 (epub)</title><link>https://blog.cwc.tw/posts/create_epub_from_website/</link><pubDate>Sat, 18 Jun 2022 11:52:41 +0800</pubDate><guid>https://blog.cwc.tw/posts/create_epub_from_website/</guid><description>買了 BOOX note5 之後, 覺得電子紙螢幕呈現效果真舒服, 所有要長時間閱讀的東西都想丟進去. 另外發現雖然系統用 Android 11, 理論上可以裝所有 Android App, 包含瀏覽器, 不過在裝了一堆 App 發現都是虛幻, 排版與文字呈現還是用 epub 格式最好.
+一開始到 https://dash.cloudflare.com/sign-up/r2 申請服務，可以看到開 bucket 是不用選 region 的，下面說明 R2 buckets are automatically distributed across Cloudflare's data centers 另外也注意到 bucket name 應該是帳號內不能相同，跟 AWS 整個 region 不能有相同的 bucket name 不一樣。</description></item><item><title>抓網站內容做成電子書 (epub)</title><link>https://blog.cwc.tw/posts/create_epub_from_website/</link><pubDate>Sat, 18 Jun 2022 11:52:41 +0800</pubDate><guid>https://blog.cwc.tw/posts/create_epub_from_website/</guid><description>
+買了 BOOX note5 之後, 覺得電子紙螢幕呈現效果真舒服, 所有要長時間閱讀的東西都想丟進去. 另外發現雖然系統用 Android 11, 理論上可以裝所有 Android App, 包含瀏覽器, 不過在裝了一堆 App 發現都是虛幻, 排版與文字呈現還是用 epub 格式最好.
 本次範例使用 EbookLib, requests
 以及 mark_mew 大大的關於我幫新公司建立整套部屬流程那檔事 為範例 感謝 mark_mew 大大分享自身經驗
 另外粗粗產生出來的 epub 還是有很多排版問題要修, 像是圖片不見了, script tag 跑出來了, 在過一層 strip_tags 應該會好一點. 看來最適合的還是轉小說進去 (?
 這次網頁數量不多用 requests 抓抓就好, 就不寫 scrapy 了, 抓別人網站注意禮貌
 程式分成四段, 第四段跟 ebooklib 範例程式只有差異在產生 sections 部分
-抓內容網址 抓內容 -&amp;gt; local file 建立章節 寫成 epub from ebooklib import epub from lxml.html import fromstring from tqdm import tqdm import os import requests # 抓內容的網址 urls = [] headers={ &amp;#34;User-Agent&amp;#34;: &amp;#34;Mozilla/5.</description></item><item><title>重寫所有 git author name &amp; email</title><link>https://blog.cwc.tw/posts/rewrite_git_author_info/</link><pubDate>Sat, 18 Jun 2022 10:48:54 +0800</pubDate><guid>https://blog.cwc.tw/posts/rewrite_git_author_info/</guid><description>在家工作之後，幾乎都是用公司筆電，一些個人專案不小心套到公司 email 設定， 想說可能要寫個 script 來處理，沒想到一行就解決了。
-git config --local user.name &amp;#34;Kaneshiro Takeshi&amp;#34; git config --local user.email &amp;#34;your_email@example.com&amp;#34; git rebase --root --exec &amp;#39;git commit --amend --no-edit --reset-author&amp;#39;</description></item><item><title>熱得要命王國 - 劍龍稜</title><link>https://blog.cwc.tw/posts/mt_stegosaurus/</link><pubDate>Sun, 28 Mar 2021 11:40:26 +0800</pubDate><guid>https://blog.cwc.tw/posts/mt_stegosaurus/</guid><description>跟登山小夥伴走了劍龍稜，天公賞臉，給了一個晴天，殊不知這樣的好天氣是這次行程最大的挑戰。
+抓內容網址 抓內容 -&amp;gt; local file 建立章節 寫成 epub from ebooklib import epub from lxml.html import fromstring from tqdm import tqdm import os import requests # 抓內容的網址 urls = [] headers={ &amp;#34;User-Agent&amp;#34;: &amp;#34;Mozilla/5.</description></item><item><title>重寫所有 git author name &amp; email</title><link>https://blog.cwc.tw/posts/rewrite_git_author_info/</link><pubDate>Sat, 18 Jun 2022 10:48:54 +0800</pubDate><guid>https://blog.cwc.tw/posts/rewrite_git_author_info/</guid><description>
+在家工作之後，幾乎都是用公司筆電，一些個人專案不小心套到公司 email 設定， 想說可能要寫個 script 來處理，沒想到一行就解決了。
+git config --local user.name &amp;#34;Kaneshiro Takeshi&amp;#34; git config --local user.email &amp;#34;your_email@example.com&amp;#34; git rebase --root --exec &amp;#39;git commit --amend --no-edit --reset-author&amp;#39;</description></item><item><title>熱得要命王國 - 劍龍稜</title><link>https://blog.cwc.tw/posts/mt_stegosaurus/</link><pubDate>Sun, 28 Mar 2021 11:40:26 +0800</pubDate><guid>https://blog.cwc.tw/posts/mt_stegosaurus/</guid><description>
+跟登山小夥伴走了劍龍稜，天公賞臉，給了一個晴天，殊不知這樣的好天氣是這次行程最大的挑戰。
 整路幾無遮蔭的曝曬，讓我狂噴汗，體力消耗得非常快。 隊友也受抽筋所苦，所幸受熱心山友贈與的鹽巴，讓症狀緩解不少。
 中途在 555 峰休息的時候，拿出早上在瑞芳車站前買的有夠香飯糰，但沒什麼食慾，咬了一口又默默放回背包&amp;hellip; 劍龍稜一定要挑個好天氣走啊，時程長，也不是很好撤退。
 但回頭看照片大家都是笑的，形象管理做得非常好（？
-成為山羊的感覺 快樂的上坡 快樂的下坡 解鎖新視角，基隆山 &amp;amp; 茶壺山 劍龍稜還會想在爬，不過讓我先休息個兩年吧。</description></item><item><title>Download s3 partial results</title><link>https://blog.cwc.tw/posts/download_s3_partial_results/</link><pubDate>Mon, 21 Dec 2020 11:33:36 +0800</pubDate><guid>https://blog.cwc.tw/posts/download_s3_partial_results/</guid><description>S3 does support the HTTP range request
+成為山羊的感覺 快樂的上坡 快樂的下坡 解鎖新視角，基隆山 &amp;amp; 茶壺山 劍龍稜還會想在爬，不過讓我先休息個兩年吧。</description></item><item><title>Download s3 partial results</title><link>https://blog.cwc.tw/posts/download_s3_partial_results/</link><pubDate>Mon, 21 Dec 2020 11:33:36 +0800</pubDate><guid>https://blog.cwc.tw/posts/download_s3_partial_results/</guid><description>
+S3 does support the HTTP range request
 It’s useful when you want the partial lines from a big file.
 By aws s3 command line
-aws s3api get-object --range bytes=0-10000 --bucket=[BUCKET] --key=[KEY] partial_results</description></item><item><title>Jupyterlab With System Monitor</title><link>https://blog.cwc.tw/posts/jupyterlab-with-system-monitor/</link><pubDate>Sat, 28 Nov 2020 21:33:42 +0800</pubDate><guid>https://blog.cwc.tw/posts/jupyterlab-with-system-monitor/</guid><description>Try to switch to jupterlab, the cpu/mem graph looks greeeat. https://github.com/jtpio/jupyterlab-system-monitor
+aws s3api get-object --range bytes=0-10000 --bucket=[BUCKET] --key=[KEY] partial_results</description></item><item><title>Jupyterlab With System Monitor</title><link>https://blog.cwc.tw/posts/jupyterlab-with-system-monitor/</link><pubDate>Sat, 28 Nov 2020 21:33:42 +0800</pubDate><guid>https://blog.cwc.tw/posts/jupyterlab-with-system-monitor/</guid><description>
+Try to switch to jupterlab, the cpu/mem graph looks greeeat. https://github.com/jtpio/jupyterlab-system-monitor
 But install n-times, the graph still no showing.
 Thanks my colleague Bill, indicate the version issue of nbresuse
 Reinstall the package, finally works!
@@ -47,20 +56,98 @@ c.NotebookApp.ResourceUseDisplay.mem_limit = 16 * 1024 ** 3 c.</description></it
 但天氣跟夥伴很讚，沒去西峰也不是很遺憾。
 哈哈山是在石門山旁邊的小山，就在往北峰的路上，路程短，眺望北峰最好的地方，走過路過千萬不要錯過。
 哈哈，十五分鐘撿三個山頭
-反射板路上 當天 15 號，但不是這個月最圓的一天 再晚一點的雲海 東峰夕照94讚 雪山西稜</description></item><item><title>Headlight Nitecore Nu32</title><link>https://blog.cwc.tw/posts/headlight-nitecore-nu32/</link><pubDate>Mon, 18 Nov 2019 23:59:38 +0800</pubDate><guid>https://blog.cwc.tw/posts/headlight-nitecore-nu32/</guid><description>&lt;p>又買了一個頭燈，之前使用 Black Diamond Storm 350，使用幾次發現一些不太順暢的地方。&lt;/p>
-&lt;p>&lt;img src="https://i.imgur.com/OGvIcB8.jpg" alt="main">&lt;/p></description></item><item><title>日本自助爬山 - 赤岳（八ヶ岳）</title><link>https://blog.cwc.tw/posts/hiking-akadake-yatsukadake/</link><pubDate>Sat, 07 Sep 2019 00:08:08 +0800</pubDate><guid>https://blog.cwc.tw/posts/hiking-akadake-yatsukadake/</guid><description>&lt;p>去年到妙高火打健走兩天，心心念念的就是明年要再來日本爬山&lt;/p></description></item><item><title>Learning the Norman Layout 4 months</title><link>https://blog.cwc.tw/posts/learning-the-norman-layout-4-months/</link><pubDate>Sun, 14 Jul 2019 21:57:44 +0800</pubDate><guid>https://blog.cwc.tw/posts/learning-the-norman-layout-4-months/</guid><description>About 4 months after changing the typing layout to Norman. I think I will type with Norman last a long time (unless I&amp;rsquo;m interesting w/ another one).
-I forgot QWERTY Typing bopomofo (Chinese typing, and it&amp;rsquo;s interesting story is another challenge on ErgoDox, so first, I flash my ErgoDox&amp;rsquo;s firmware to use Norman, then I can still type bopomofo on my laptop&amp;rsquo;s keyboard. I will have some time will type with QWERTY.</description></item><item><title>Learning the Norman Layout 2 weeks</title><link>https://blog.cwc.tw/posts/learning-norman-layout-week2/</link><pubDate>Sat, 23 Mar 2019 10:06:48 +0800</pubDate><guid>https://blog.cwc.tw/posts/learning-norman-layout-week2/</guid><description>My shoulder One day I&amp;rsquo;m looking for a split keyboard try to make my shoulder feel better at work.
+反射板路上 當天 15 號，但不是這個月最圓的一天 再晚一點的雲海 東峰夕照94讚 雪山西稜</description></item><item><title>Headlight Nitecore Nu32</title><link>https://blog.cwc.tw/posts/headlight-nitecore-nu32/</link><pubDate>Mon, 18 Nov 2019 23:59:38 +0800</pubDate><guid>https://blog.cwc.tw/posts/headlight-nitecore-nu32/</guid><description>
+&lt;p>又買了一個頭燈，之前使用 Black Diamond Storm 350，使用幾次發現一些不太順暢的地方。&lt;/p>
+&lt;p>&lt;figure>
+&lt;picture>
+&lt;img
+loading="lazy"
+decoding="async"
+alt="main"
+class="image_figure image_external image_processed"
+width="3547"
+height="2660"
+src="https://blog.cwc.tw/OGvIcB8_8825851503557451035.jpg"
+/>
+&lt;/picture>
+&lt;/figure>
+&lt;/p></description></item><item><title>日本自助爬山 - 赤岳（八ヶ岳）</title><link>https://blog.cwc.tw/posts/hiking-akadake-yatsukadake/</link><pubDate>Sat, 07 Sep 2019 00:08:08 +0800</pubDate><guid>https://blog.cwc.tw/posts/hiking-akadake-yatsukadake/</guid><description>
+&lt;p>去年到妙高火打健走兩天，心心念念的就是明年要再來日本爬山&lt;/p></description></item><item><title>Learning the Norman Layout 4 months</title><link>https://blog.cwc.tw/posts/learning-the-norman-layout-4-months/</link><pubDate>Sun, 14 Jul 2019 21:57:44 +0800</pubDate><guid>https://blog.cwc.tw/posts/learning-the-norman-layout-4-months/</guid><description>
+About 4 months after changing the typing layout to Norman. I think I will type with Norman last a long time (unless I&amp;rsquo;m interesting w/ another one).
+I forgot QWERTY Typing bopomofo (Chinese typing, and it&amp;rsquo;s interesting story is another challenge on ErgoDox, so first, I flash my ErgoDox&amp;rsquo;s firmware to use Norman, then I can still type bopomofo on my laptop&amp;rsquo;s keyboard. I will have some time will type with QWERTY.</description></item><item><title>Learning the Norman Layout 2 weeks</title><link>https://blog.cwc.tw/posts/learning-norman-layout-week2/</link><pubDate>Sat, 23 Mar 2019 10:06:48 +0800</pubDate><guid>https://blog.cwc.tw/posts/learning-norman-layout-week2/</guid><description>
+My shoulder One day I&amp;rsquo;m looking for a split keyboard try to make my shoulder feel better at work.
 I need to keep the round shoulder posture almost all day. Make my body curl and back pain sometimes.
 What I found is ErgoDox EZ, and received my new keyboard after 10 days.
-ErgoDox ErgoDox is a split, ortholinear, fully programmable keyboard with thumb key matrix. So you can put any keys on any position to facilitate the thumb usage.</description></item><item><title>妙高、火打兩日縱走</title><link>https://blog.cwc.tw/posts/myoko/</link><pubDate>Sat, 03 Nov 2018 14:34:21 +0800</pubDate><guid>https://blog.cwc.tw/posts/myoko/</guid><description>&lt;p>&lt;img src="https://i.imgur.com/cadnHgf.jpg" alt="火打山">
-J 火打山拉&lt;/p></description></item><item><title>Terminal Notify</title><link>https://blog.cwc.tw/posts/terminal-notify/</link><pubDate>Tue, 26 Dec 2017 09:57:45 +0800</pubDate><guid>https://blog.cwc.tw/posts/terminal-notify/</guid><description>&lt;p>最近公司 build tool 因為專案爆肥越來越慢，build code 要花個十分鐘左右，不太行啊， ~泡咖啡時間變長了呀逼~&lt;/p></description></item><item><title>Find SQL injection in Python code</title><link>https://blog.cwc.tw/posts/find-sql-injection-in-python-code/</link><pubDate>Mon, 11 Dec 2017 10:08:06 +0800</pubDate><guid>https://blog.cwc.tw/posts/find-sql-injection-in-python-code/</guid><description>&lt;p>&lt;a href="https://github.com/uber/py-find-injection">https://github.com/uber/py-find-injection&lt;/a>&lt;/p>
+ErgoDox ErgoDox is a split, ortholinear, fully programmable keyboard with thumb key matrix. So you can put any keys on any position to facilitate the thumb usage.</description></item><item><title>妙高、火打兩日縱走</title><link>https://blog.cwc.tw/posts/myoko/</link><pubDate>Sat, 03 Nov 2018 14:34:21 +0800</pubDate><guid>https://blog.cwc.tw/posts/myoko/</guid><description>
+&lt;p>J 火打山拉
+&lt;figure>
+&lt;picture>
+&lt;img
+loading="lazy"
+decoding="async"
+alt="火打山"
+class="image_figure image_external image_processed"
+width="4032"
+height="3024"
+src="https://blog.cwc.tw/cadnHgf_3341677802134928205.jpg"
+/>
+&lt;/picture>
+&lt;/figure>
+&lt;/p></description></item><item><title>Terminal Notify</title><link>https://blog.cwc.tw/posts/terminal-notify/</link><pubDate>Tue, 26 Dec 2017 09:57:45 +0800</pubDate><guid>https://blog.cwc.tw/posts/terminal-notify/</guid><description>
+&lt;p>最近公司 build tool 因為專案爆肥越來越慢，build code 要花個十分鐘左右，不太行啊， ~泡咖啡時間變長了呀逼~&lt;/p></description></item><item><title>Find SQL injection in Python code</title><link>https://blog.cwc.tw/posts/find-sql-injection-in-python-code/</link><pubDate>Mon, 11 Dec 2017 10:08:06 +0800</pubDate><guid>https://blog.cwc.tw/posts/find-sql-injection-in-python-code/</guid><description>
+&lt;p>&lt;a href="https://github.com/uber/py-find-injection">https://github.com/uber/py-find-injection&lt;/a>&lt;/p>
 &lt;p>用程式化的方式掃出 code base 沒有乖乖用 paramstyle sql 語句&lt;/p>
-&lt;p>&lt;img src="https://i.imgur.com/P18DyHR.jpg" alt="Imgur">&lt;/p></description></item><item><title>MySQL Tuple Comparison Issue</title><link>https://blog.cwc.tw/posts/mysql-tuple-comparison-issue/</link><pubDate>Sat, 09 Dec 2017 13:19:56 +0800</pubDate><guid>https://blog.cwc.tw/posts/mysql-tuple-comparison-issue/</guid><description>&lt;p>MySQL 5.6 tuple comparison bug&lt;/p>
+&lt;p>&lt;figure>
+&lt;picture>
+&lt;img
+loading="lazy"
+decoding="async"
+alt="Imgur"
+class="image_figure image_external image_processed"
+width="525"
+height="453"
+src="https://blog.cwc.tw/P18DyHR_18013636255310351858.jpg"
+/>
+&lt;/picture>
+&lt;/figure>
+&lt;/p></description></item><item><title>MySQL Tuple Comparison Issue</title><link>https://blog.cwc.tw/posts/mysql-tuple-comparison-issue/</link><pubDate>Sat, 09 Dec 2017 13:19:56 +0800</pubDate><guid>https://blog.cwc.tw/posts/mysql-tuple-comparison-issue/</guid><description>
+&lt;p>MySQL 5.6 tuple comparison bug&lt;/p>
 &lt;p>這是一個用 IN clause 比較 primary key 卻得到 full table scan 的故事&lt;/p>
-&lt;p>&lt;img src="https://i.imgur.com/LIOTPaT.jpg" alt="Imgur">&lt;/p></description></item><item><title>unifi - airCube</title><link>https://blog.cwc.tw/posts/aircube/</link><pubDate>Sat, 14 Oct 2017 14:06:48 +0800</pubDate><guid>https://blog.cwc.tw/posts/aircube/</guid><description>&lt;p>&lt;img src="https://imgur.com/3AjUuen.jpg" alt="Imgur">&lt;/p>
+&lt;p>&lt;figure>
+&lt;picture>
+&lt;img
+loading="lazy"
+decoding="async"
+alt="Imgur"
+class="image_figure image_external image_processed"
+width="400"
+height="336"
+src="https://blog.cwc.tw/LIOTPaT_7058137360359968120.jpg"
+/>
+&lt;/picture>
+&lt;/figure>
+&lt;/p></description></item><item><title>unifi - airCube</title><link>https://blog.cwc.tw/posts/aircube/</link><pubDate>Sat, 14 Oct 2017 14:06:48 +0800</pubDate><guid>https://blog.cwc.tw/posts/aircube/</guid><description>
+&lt;p>&lt;figure>
+&lt;picture>
+&lt;img
+loading="lazy"
+decoding="async"
+alt="Imgur"
+class="image_figure image_external image_processed"
+width="670"
+height="364"
+src="https://blog.cwc.tw/3AjUuen_15410624709714649800.jpg"
+/>
+&lt;/picture>
+&lt;/figure>
+&lt;/p>
 &lt;h1 id="又">又&lt;/h1>
 &lt;p>買了台 AP（咦，為什麼我要說又），特色是方塊就古錐，4 port 可作 NAT/switch
-DC/POE 供電也可以 passthrough 出去&lt;/p></description></item><item><title>分分鐘看懂 ABNF 以 language tag 為例</title><link>https://blog.cwc.tw/posts/rfc-5234/</link><pubDate>Mon, 02 Oct 2017 18:54:14 +0800</pubDate><guid>https://blog.cwc.tw/posts/rfc-5234/</guid><description>&lt;p>Code review 的時候熊熊想戰 naming，戰 naming 最好的就是翻相關的 rfc spec&lt;/p></description></item><item><title>Pip 藏有惡意套件</title><link>https://blog.cwc.tw/posts/pip-malicious-packages/</link><pubDate>Mon, 25 Sep 2017 08:20:05 +0800</pubDate><guid>https://blog.cwc.tw/posts/pip-malicious-packages/</guid><description>&lt;p>有一段時間了 20170909 的報告
-&lt;a href="http://www.nbu.gov.sk/skcsirt-sa-20170909-pypi/">http://www.nbu.gov.sk/skcsirt-sa-20170909-pypi/&lt;/a>&lt;/p></description></item><item><title>根據標籤下載 gmail 備份</title><link>https://blog.cwc.tw/posts/google-takeout/</link><pubDate>Sun, 24 Sep 2017 20:08:08 +0800</pubDate><guid>https://blog.cwc.tw/posts/google-takeout/</guid><description>&lt;p>最近剛好有一些處理 email 資料的需求，要從一堆 exception mail 裡面撈出一些 id。&lt;/p></description></item><item><title>python xml vulnerabilities</title><link>https://blog.cwc.tw/posts/python-xml-vulnerabilities/</link><pubDate>Mon, 13 Mar 2017 18:00:32 +0800</pubDate><guid>https://blog.cwc.tw/posts/python-xml-vulnerabilities/</guid><description>&lt;blockquote>
+DC/POE 供電也可以 passthrough 出去&lt;/p></description></item><item><title>分分鐘看懂 ABNF 以 language tag 為例</title><link>https://blog.cwc.tw/posts/rfc-5234/</link><pubDate>Mon, 02 Oct 2017 18:54:14 +0800</pubDate><guid>https://blog.cwc.tw/posts/rfc-5234/</guid><description>
+&lt;p>Code review 的時候熊熊想戰 naming，戰 naming 最好的就是翻相關的 rfc spec&lt;/p></description></item><item><title>Pip 藏有惡意套件</title><link>https://blog.cwc.tw/posts/pip-malicious-packages/</link><pubDate>Mon, 25 Sep 2017 08:20:05 +0800</pubDate><guid>https://blog.cwc.tw/posts/pip-malicious-packages/</guid><description>
+&lt;p>有一段時間了 20170909 的報告
+&lt;a href="http://www.nbu.gov.sk/skcsirt-sa-20170909-pypi/">http://www.nbu.gov.sk/skcsirt-sa-20170909-pypi/&lt;/a>&lt;/p></description></item><item><title>根據標籤下載 gmail 備份</title><link>https://blog.cwc.tw/posts/google-takeout/</link><pubDate>Sun, 24 Sep 2017 20:08:08 +0800</pubDate><guid>https://blog.cwc.tw/posts/google-takeout/</guid><description>
+&lt;p>最近剛好有一些處理 email 資料的需求，要從一堆 exception mail 裡面撈出一些 id。&lt;/p></description></item><item><title>python xml vulnerabilities</title><link>https://blog.cwc.tw/posts/python-xml-vulnerabilities/</link><pubDate>Mon, 13 Mar 2017 18:00:32 +0800</pubDate><guid>https://blog.cwc.tw/posts/python-xml-vulnerabilities/</guid><description>
+&lt;blockquote>
 &lt;p>It&amp;rsquo;s just XML, what could probably go wrong? - Christian Heimes&lt;/p>
 &lt;/blockquote></description></item></channel></rss>
