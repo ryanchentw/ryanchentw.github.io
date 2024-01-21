@@ -2,25 +2,12 @@ baseURL = "https://blog.cwc.tw/"
 languageCode = "zh-TW"
 title = "Ryan's blog"
 author = "Ryan Chen"
-theme = "simpleness"
+theme = "hugo-clarity"
 enableInlineShortcodes = true
 enableEmoji = true
+disqusShortname = "prpr-tw"
+DefaultContentLanguage = "en"
 
-[params]
-    paginate = 10
-    subtitle = "coding, hiking and murmurs"
-    bio = "Average python programmer. Love hiking and cycling"
-    ga_api_key = "UA-106885738-1"
-    avatar = "https://i.imgur.com/iAhAEVA.jpg"
-    disqus = "prpr-tw"
-
-[social]
-    twitter = "https://twitter.com/v_kiiii"
-    github = "https://github.com/ryanchentw"
-
-[blackfriday]
-    hardLineBreak = true
-    hrefTargetBlank = true
 
 [[menu.main]]
 name = "Coding"
@@ -29,3 +16,14 @@ url = "/categories/coding"
 [[menu.main]]
 name = "Hiking"
 url = "/categories/hiking"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+enforceLightMode = true # Force the site to always load in light mode.

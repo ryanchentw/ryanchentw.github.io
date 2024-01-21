@@ -8,8 +8,8 @@ Tags:
   - Japan
 ---
 
-![火打山](https://i.imgur.com/cadnHgf.jpg)
 J 火打山拉
+![火打山](https://i.imgur.com/cadnHgf.jpg)
 
 <!--more-->
 
@@ -90,7 +90,6 @@ D2: 黑澤池山屋 -> 高谷池山屋 -> 火打山 -> 高谷池山屋 -> 笹峰
 
 
 早餐輪到成熟的大人們先吃，五點半放飯，吃蛋餅皮抹果醬，吃完就出發往高谷池，也是翻過一個小山頭來到高谷池山屋，高谷池曾入選 [CNN 日本の最も美しい場所31選](https://www.joetsutj.com/articles/52123959) 大概長這樣
-![日本の最も美しい場所31選](https://cdn.joetsutj.com/storage/oi/f8497b2e.jpg)
 然而我看到的是這樣
 ![高谷池](https://i.imgur.com/p01cCkD.jpg)
 

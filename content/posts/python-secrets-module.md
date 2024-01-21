@@ -19,11 +19,11 @@ date: 2023-04-08T09:58:01+08:00
 
 
 ```python
-# 偷懶版本，要注意 32 是 bytes，實際產生出來的長度因為 base64 encode 的關係會超過 32
+#### 偷懶版本，要注意 32 是 bytes，實際產生出來的長度因為 base64 encode 的關係會超過 32
 from secrets import token_urlsafe
 print(token_urlsafe(32))
 
-# 長一點的版本，使用 secrets.choice
+#### 長一點的版本，使用 secrets.choice
 import secrets import string
 alphabet = string.ascii_letters + string.digits
 random_string = ''.join(secrets.choice(alphabet) for i in range(16))
