@@ -5,7 +5,7 @@ author = "Ryan Chen"
 theme = "hugo-clarity"
 enableInlineShortcodes = true
 enableEmoji = true
-disqusShortname = "prpr-tw"
+disqusShortname = "blog.cwc.tw"
 DefaultContentLanguage = "en"
 
 
