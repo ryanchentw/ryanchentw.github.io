@@ -9,6 +9,11 @@ disqusShortname = "prpr-tw"
 DefaultContentLanguage = "en"
 
 
+[menus]
+[[menu.main]]
+name = "About"
+url = "/about"
+
 [[menu.main]]
 name = "Coding"
 url = "/categories/coding"
