@@ -1,6 +1,6 @@
 ---
 title: "正音班 - 台大語文中心"
-date: 2024-06-23T19:28:07+08:00
+date: 2024-06-23T01:28:07+08:00
 
 Tags:
   - English
@@ -42,3 +42,9 @@ Tags:
 實際練習會結合之前拆句的技巧，來安排 stress/unstress syllables，當你唸起來不流暢的時候，可能就代表你需要重寫這句子，但是最後可能還是會連續出現兩個 stress syllables 的情況，這沒問題，如果是出現兩個 unstress syllable 可以用語速加快的方式來帶過，都還是可以變得更流暢。
 
 最後 rhythm 的部分很吸引人，但是我覺得最有價值的地方還是第一堂的母音部分，把這個弄懂，可以大幅度減少 native speaker 聽不懂的問題，發音需要長時間的練習，最後用教授的一個想法做結尾，教授認為他過去之前的上課經驗是上課一條蟲，下課一條龍，下課時同學切換回中文口沫橫飛，那叫一個精彩，完全可以表達出 personality，但是講英文的時候就完全感受不到那個人 personality，這會讓他覺得很無聊，不會繼續想再跟這個人聊下去，所以希望上過課的同學，透過持續不斷的練習，讓說出口更有自信，更可以表達出自己。
+
+
+最後的最後想到一些文章在討論台灣工程師常唸錯的單字
+- [台灣工程師常唸錯的英文單字](https://blog.privism.org/2012/06/blog-post.html)
+- [Chinese Programmer Wrong Pronunciation](https://cpwp.netlify.app/)
+- [救救工程師英語](https://medium.com/@jackshiba/%E6%95%91%E6%95%91%E5%B7%A5%E7%A8%8B%E5%B8%AB%E8%8B%B1%E8%AA%9E-%E5%88%9D%E7%B4%9A%E7%AF%87-boolean-null-comment-%E4%BD%A0%E9%83%BD%E6%80%8E%E9%BA%BC%E5%94%B8-adbdaedad144)
