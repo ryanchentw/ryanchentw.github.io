@@ -1,11 +1,11 @@
-baseURL = "https://blog.cwc.tw/"
+baseURL = "https://blog.ryanc.tw/"
 languageCode = "zh-TW"
 title = "Ryan's blog"
 author = "Ryan Chen"
 theme = "hugo-clarity"
 enableInlineShortcodes = true
 enableEmoji = true
-disqusShortname = "blog.cwc.tw"
+disqusShortname = "blog.ryanc.tw"
 DefaultContentLanguage = "en"
 
 
@@ -32,6 +32,7 @@ home = ["HTML", "RSS", "JSON"]
 
 [params]
 enforceLightMode = true # Force the site to always load in light mode.
+ga_analytics = "G-XTJ12B7L7D"
 
 [[social]]
 name = "Facebook"
