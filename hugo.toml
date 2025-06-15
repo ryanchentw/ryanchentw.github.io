@@ -1,0 +1,3 @@
+baseURL = 'https://blog.ryanc.tw/'
+title = "Ryan's Blog"
+theme = 'hugo-book'
