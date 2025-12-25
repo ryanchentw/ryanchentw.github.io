@@ -2,3 +2,6 @@ baseURL = 'https://blog.ryanc.tw/'
 title = "Ryan's Blog"
 theme = 'hugo-book'
 googleAnalytics = "G-LXQRR6N5N3"
+
+[params]
+  BookEnableMermaid = true

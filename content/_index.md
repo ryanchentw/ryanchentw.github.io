@@ -1,5 +1,8 @@
 # Timeline
 
+## 2025
+- 2025-12-22 — [爛英文不求人，使用 MacOS Automator 快速觸發 Python Script 幫你 proofreading!](posts/instant-proofreading-using-macos-automator/)
+
 ## 2024
 
 - 2024-01-22 — [Gsutil Need Pip Install Pyopenssl](/posts/gsutil-need-pip-install-pyopenssl)
@@ -21,7 +24,7 @@
 
 ## 2021
 
-- 2021-03-28 — [熱得要命王國 - 劍龍稜](/posts/mt_Stegosaurus)
+- 2021-03-28 — [熱得要命王國 - 劍龍稜](/posts/mt_stegosaurus)
 
 ## 2020
 
@@ -45,7 +48,7 @@
 - 2017-09-24 — [根據標籤下載 gmail 備份](/posts/google-takeout)
 - 2017-09-25 — [Pip 藏有惡意套件](/posts/pip-malicious-packages)
 - 2017-10-02 — [分分鐘看懂 ABNF 以 language tag 為例](/posts/rfc-5234)
-- 2017-10-14 — [unifi - airCube](/posts/airCube)
+- 2017-10-14 — [unifi - airCube](/posts/aircube)
 - 2017-12-09 — [MySQL Tuple Comparison Issue](/posts/mysql-tuple-comparison-issue)
 - 2017-12-11 — [Find SQL injection in Python code](/posts/find-sql-injection-in-python-code)
 - 2017-12-26 — [Terminal Notify](/posts/terminal-notify)
